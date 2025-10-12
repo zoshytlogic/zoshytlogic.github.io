@@ -102,37 +102,38 @@
 
 
 
-
-<table>
+<!-- 3osheet IDE -->
+<table style="width:100%; border-collapse:collapse;">
   <tr>
-    <td style="width: 45%; vertical-align: top;">
-      <img src="3osheetIDE.jpg" style="width:100%; border-radius: 8px;">
+    <td style="width:45%; vertical-align:top;">
+      <img src="3osheetIDE.jpg" alt="3osheet IDE" style="width:100%; border-radius:8px;">
     </td>
-    <td style="width: 55%; vertical-align: top; padding-left: 20px;">
-      <p style="line-height: 1.6; font-size: 16px;">
+    <td style="width:55%; vertical-align:top; padding-left:20px;">
+      <p style="line-height:1.6; font-size:16px;">
         <strong>3o|||sheets IDE</strong> is a lightweight, cross-platform development environment built on 
         <strong>OpenJDK</strong>, capable of running on <em>single-board computers</em> and embedded devices 
         with minimal hardware resources.
       </p>
 
-      <p style="line-height: 1.6; font-size: 16px;">
+      <p style="line-height:1.6; font-size:16px;">
         It natively supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> programming languages, 
         as well as a low-level <strong>virtual machine instruction language</strong> for advanced control logic design.
       </p>
 
-      <p style="line-height: 1.6; font-size: 16px;">
+      <p style="line-height:1.6; font-size:16px;">
         In <strong>debug mode</strong>, 3osheets allows developers to <em>pause, edit, and rewrite individual tasks in real time</em>, 
         without interrupting the execution of other processes — a powerful feature for live system tuning and rapid development.
       </p>
 
-      <p style="line-height: 1.6; font-size: 16px;">
-        The runtime supports two independent multitasking architectures:<br><br>
-        <strong>• Classic PLC mode</strong> — a deterministic cyclic model (<code>OB</code>, <code>OB100</code>), ensuring compatibility and simplicity.<br>
-        <strong>• RTOS mode</strong> — a true preemptive multitasking kernel based on a <strong>1&nbsp;ms hardware timer interrupt</strong>, 
-        enabling full task context saving and restoration for precise real-time performance.
+      <p style="line-height:1.6; font-size:16px;">
+        The runtime supports two independent multitasking architectures:
       </p>
+      <ul style="font-size:16px; line-height:1.6; margin-top:4px;">
+        <li><strong>Classic PLC mode</strong> — a deterministic cyclic model (<code>OB</code>, <code>OB100</code>) ensuring compatibility and simplicity.</li>
+        <li><strong>RTOS mode</strong> — a true preemptive multitasking kernel based on a <strong>1 ms hardware timer interrupt</strong>, enabling full task context saving and restoration for precise real-time performance.</li>
+      </ul>
 
-      <p style="line-height: 1.6; font-size: 16px;">
+      <p style="line-height:1.6; font-size:16px;">
         Designed for <strong>efficiency</strong>, <strong>portability</strong>, and <strong>real-time control</strong>, 
         3osheets bridges traditional PLC logic with modern embedded RTOS flexibility.
       </p>
@@ -141,77 +142,51 @@
 </table>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <table>
+<!-- 3osheet Compiler -->
+<table style="width:100%; border-collapse:collapse; margin-top:40px;">
   <tr>
-    <td style="width: 45%; vertical-align: top;">
-      <img src="3osheetcompile.png" style="width:100%; border-radius: 8px;">
+    <td style="width:45%; vertical-align:top;">
+      <img src="3osheetcompile.png" alt="3osheet Compiler" style="width:100%; border-radius:8px;">
     </td>
-    <td style="width: 55%; vertical-align: top; padding-left: 20px;">
-     <h3 style="margin-top:40px;">3osheet Compiler</h3>
+    <td style="width:55%; vertical-align:top; padding-left:20px;">
+      <h3 style="margin-top:0;">3osheet Compiler</h3>
 
-<p style="max-width: 700px; line-height: 1.6; font-size: 16px;">
-  <strong>3o|||sheet Compiler</strong> is a standalone application that compiles instruction text into <strong>bytecode</strong>.
-  It features its own programming language, <code>.3osheet</code>, built on a <em>hybrid architecture</em> — 
-  combining <strong>high-level syntax</strong> for arrays and deeply nested structures with 
-  <strong>atomic, assembly-like instructions</strong> compiled into bytecode executed by the virtual machine runtime.
-</p>
+      <p style="max-width:700px; line-height:1.6; font-size:16px;">
+        <strong>3o|||sheet Compiler</strong> is a standalone application that compiles instruction text into <strong>bytecode</strong>.
+        It features its own programming language, <code>.3osheet</code>, built on a <em>hybrid architecture</em> — combining 
+        <strong>high-level syntax</strong> for arrays and deeply nested structures with <strong>atomic, assembly-like instructions</strong> 
+        compiled into bytecode executed by the virtual machine runtime.
+      </p>
 
-<p style="max-width: 700px; line-height: 1.6; font-size: 16px;">
-  The compiler supports a wide range of instructions, including <strong>virtual stack</strong> and <strong>context management</strong> operations,
-  enabling developers to build complex <strong>multitasking programs</strong> with <em>recursive calls</em> 
-  and <em>deep function transitions</em>.
-</p>
-
+      <p style="max-width:700px; line-height:1.6; font-size:16px;">
+        The compiler supports a wide range of instructions, including <strong>virtual stack</strong> and 
+        <strong>context management</strong> operations, enabling developers to build complex 
+        <strong>multitasking programs</strong> with <em>recursive calls</em> and <em>deep function transitions</em>.
+      </p>
     </td>
   </tr>
 </table>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<table style="width:100%; border-collapse:collapse;">
+<!-- 3osheet Runtime -->
+<table style="width:100%; border-collapse:collapse; margin-top:40px;">
   <tr>
     <td style="width:45%; vertical-align:top;">
       <img src="3osheetRuntime.png" alt="3osheet Runtime Board" style="width:100%; border-radius:8px;">
     </td>
     <td style="width:55%; vertical-align:top; padding-left:20px;">
-      
+      <h3 style="margin-top:0;">3osheet Runtime</h3>
+
       <section id="runtime" style="max-width:900px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial; color:#222;">
         <h4 style="margin-top:0; margin-bottom:8px;">Register-based Virtual Machine</h4>
 
-        <p style="line-height:1.6; font-size:16px; margin:8px 0;">
+        <p style="line-height:1.6; font-size:16px;">
           A <strong>register-based virtual machine</strong> that executes programs entirely within a 
           <strong>safe, sandboxed environment</strong>. The <strong>3osheet runtime</strong> can run on devices 
-          with as little as <strong>8&nbsp;KB of RAM</strong>, while providing 
-          <strong>full control over microcontroller peripherals</strong>.
+          with as little as <strong>8 KB of RAM</strong>, while providing <strong>full control over microcontroller peripherals</strong>.
         </p>
 
-        <p style="line-height:1.6; font-size:16px; margin:8px 0;">
+        <p style="line-height:1.6; font-size:16px;">
           It contains <strong>no low-level, architecture-dependent code</strong>, which means the runtime 
           can be <strong>ported quickly to any microcontroller platform</strong> when needed.
         </p>
@@ -226,13 +201,9 @@
           </dd>
         </dl>
       </section>
-
     </td>
   </tr>
 </table>
-
-
-
 
 
 
