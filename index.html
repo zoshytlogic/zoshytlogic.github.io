@@ -66,47 +66,57 @@
 }
 
 
-      .feature {
+  .main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  table.project {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+
+  td {
+    vertical-align: top;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .feature {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin: 40px 0;
+    justify-content: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     color: #222;
   }
 
   .feature img {
-    width: 45%;
+    width: 90%;
+    max-width: 400px;
     border-radius: 10px;
-    flex-shrink: 0;
+    margin-bottom: 16px;
   }
 
   .feature .text {
-    width: 55%;
-    padding-left: 20px;
+    width: 95%;
+    max-width: 700px;
+    text-align: left;
   }
 
-  .feature p, .feature ul, .feature dl {
+  .feature p, .feature ul {
     line-height: 1.6;
     font-size: 16px;
   }
 
   @media (max-width: 768px) {
-    .feature {
-      flex-direction: column;
-      align-items: center;
-    }
-
     .feature img {
-      width: 90%;
-      margin-bottom: 16px;
+      width: 100%;
+      max-width: 500px;
     }
-
-    .feature .text {
-      width: 95%;
-      padding: 0;
-    }
-
     .feature p, .feature ul {
       font-size: 15px;
     }
@@ -148,75 +158,64 @@
 <p class="hhh3"><span style="color:#88aacc">3O|||SHEET</span> is a lightweight development environment for programming industrial controllers LogicGather, with support for <span style="color:#6699cc"> LD </span> and <span style="color:#6699cc">ST</span> programming languages according to the <span style="color:#6699cc"> IEC 61131-3</span> standard.</p>
 
 
-<table>
-
-<tr> <td></td>
-
-
-    <td>
-<!-- 3osheet IDE -->
-<div class="feature">
-  <img src="3osheetIDE.jpg" alt="3osheet IDE">
-  <div class="text">
-    <h3>3o|||sheets IDE</h3>
-    <p><strong>3o|||sheets IDE</strong> — a lightweight, cross-platform development environment built on <strong>OpenJDK</strong>. It runs even on single-board computers with minimal resources.</p>
-    <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages, plus a low-level <strong>virtual machine instruction set</strong> for advanced logic design.</p>
-    <p>In <strong>debug mode</strong>, developers can pause and rewrite individual tasks live — without stopping the system.</p>
-    <ul>
-      <li><strong>Classic PLC mode</strong> — cyclic model (<code>OB</code>, <code>OB100</code>) for compatibility.</li>
-      <li><strong>RTOS mode</strong> — preemptive multitasking via 1 ms timer interrupt, with full task context management.</li>
-    </ul>
-    <p>Combines PLC simplicity with RTOS precision — designed for <strong>efficiency</strong>, <strong>portability</strong>, and <strong>real-time control</strong>.</p>
-  </div>
-</div>
-
-        </td>
-    <td></td>
-</tr>
+<div class="main-container">
+  <table class="project">
+    <tr>
+      <td>
+        <!-- 3osheet IDE -->
+        <div class="feature">
+          <img src="3osheetIDE.jpg" alt="3osheet IDE">
+          <div class="text">
+            <h3>3o|||sheets IDE</h3>
+            <p><strong>3o|||sheets IDE</strong> — a lightweight, cross-platform IDE built on <strong>OpenJDK</strong>. Runs even on single-board computers with minimal resources.</p>
+            <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages plus a <strong>virtual machine instruction set</strong> for advanced logic design.</p>
+            <p>In <strong>debug mode</strong>, developers can pause and rewrite individual tasks live — without stopping the system.</p>
+            <ul>
+              <li><strong>Classic PLC mode</strong> — cyclic model (<code>OB</code>, <code>OB100</code>).</li>
+              <li><strong>RTOS mode</strong> — preemptive multitasking via 1 ms timer interrupt.</li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
 
     <tr>
-        <td></td>
+      <td>
+        <!-- 3osheet Compiler -->
+        <div class="feature">
+          <img src="3osheetcompile.png" alt="3osheet Compiler">
+          <div class="text">
+            <h3>3osheet Compiler</h3>
+            <p>The <strong>3o|||sheet Compiler</strong> compiles instruction text into <strong>bytecode</strong>.</p>
+            <p>Its <code>.3osheet</code> language blends <strong>high-level syntax</strong> with <strong>atomic assembly-like instructions</strong> executed by the VM runtime.</p>
+            <p>Supports <strong>virtual stack</strong> and <strong>context management</strong> — ideal for recursive multitasking programs.</p>
+          </div>
+        </div>
+      </td>
+    </tr>
 
-        <td>
-<!-- 3osheet Compiler -->
-<div class="feature">
-  <img src="3osheetcompile.png" alt="3osheet Compiler">
-  <div class="text">
-    <h3>3osheet Compiler</h3>
-    <p>The <strong>3o|||sheet Compiler</strong> is a standalone tool that compiles instruction text into <strong>bytecode</strong>.</p>
-    <p>Its custom <code>.3osheet</code> language combines <strong>high-level syntax</strong> for arrays and structures with <strong>assembly-like atomic instructions</strong> executed by the virtual machine.</p>
-    <p>It supports stack and context operations — allowing complex <strong>multitasking programs</strong> with recursion and deep function transitions.</p>
-  </div>
+    <tr>
+      <td>
+        <!-- 3osheet Runtime -->
+        <div class="feature">
+          <img src="3osheetRuntime.png" alt="3osheet Runtime">
+          <div class="text">
+            <h3>3osheet Runtime</h3>
+            <h4>Register-based Virtual Machine</h4>
+            <p>A <strong>register-based virtual machine</strong> running safely in a sandbox. Works on devices with only <strong>8 KB RAM</strong> and full peripheral access.</p>
+            <p>No architecture-specific code — portable to any MCU.</p>
+            <ul>
+              <li>Runs on low-memory devices (~8 KB RAM)</li>
+              <li>Safe sandboxed execution</li>
+              <li>Controls GPIO, timers, UART, I²C, SPI, etc.</li>
+              <li>Architecture-independent design</li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
 </div>
-</td>
-        <td></td>
-        </tr>
-<tr> <td></td>
-
-    <td>
-<!-- 3osheet Runtime -->
-<div class="feature">
-  <img src="3osheetRuntime.png" alt="3osheet Runtime Board">
-  <div class="text">
-    <h3>3osheet Runtime</h3>
-    <h4>Register-based Virtual Machine</h4>
-    <p>A <strong>register-based virtual machine</strong> executing code in a <strong>safe sandboxed environment</strong>. Runs on devices with only <strong>8 KB RAM</strong> and provides full peripheral access.</p>
-    <p>No hardware-specific code — easily portable to any microcontroller.</p>
-    <ul>
-      <li>Works on low-memory devices (~8 KB RAM)</li>
-      <li>Safe sandboxed execution</li>
-      <li>Controls GPIO, timers, UART, I²C, SPI, etc.</li>
-      <li>Architecture-independent implementation</li>
-    </ul>
-  </div>
-</div>
-
-</td>
-    <td></td>
-
-</tr>
-</table>
-
 
     
 
