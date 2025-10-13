@@ -110,7 +110,13 @@ footer {
     <div class="feature">
         <img src="logicgatherplc.png" alt="LogicGather PLC">
         <h1>3o|||sheet Automation</h1>
-        <p>LogicGather – a PLC for process management. Lightweight development environment supporting <strong>LD</strong> and <strong>ST</strong> programming languages according to IEC 61131-3.</p>
+        <h2>3o|||sheet IDE</h2>
+        <p>A lightweight, cross-platform IDE built on <strong>OpenJDK</strong>. Runs on single-board computers with minimal resources.</p>
+        <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages plus a <strong>virtual machine instruction set</strong> for advanced logic design.</p>
+        <ul>
+            <li>Classic PLC mode — cyclic model (<code>OB</code>, <code>OB100</code>)</li>
+            <li>RTOS mode — preemptive multitasking via 1 ms timer interrupt</li>
+        </ul>
     </div>
 
     <div class="feature">
@@ -122,24 +128,19 @@ footer {
 
     <div class="feature">
         <img src="3osheetIDE.jpg" alt="3o|||sheet IDE">
-        <h2>3o|||sheet IDE</h2>
-        <p>A lightweight, cross-platform IDE built on <strong>OpenJDK</strong>. Runs on single-board computers with minimal resources.</p>
-        <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages plus a <strong>virtual machine instruction set</strong> for advanced logic design.</p>
-        <ul>
-            <li>Classic PLC mode — cyclic model (<code>OB</code>, <code>OB100</code>)</li>
-            <li>RTOS mode — preemptive multitasking via 1 ms timer interrupt</li>
-        </ul>
+        
     </div>
 
     <div class="feature">
-        <img src="3osheetcompile.png" alt="3o|||sheet Compiler">
+        
         <h2>3o|||sheet Compiler</h2>
         <p>Compiles instruction text into <strong>bytecode</strong> executed by the VM runtime.</p>
         <p>Supports <strong>virtual stack</strong> and <strong>context management</strong> — ideal for recursive multitasking programs.</p>
+        <img src="3osheetcompile.png" alt="3o|||sheet Compiler">
     </div>
 
     <div class="feature">
-        <img src="3osheetRuntime.png" alt="3o|||sheet Runtime">
+        
         <h2>3o|||sheet Runtime</h2>
         <p>Register-based Virtual Machine running safely in a sandbox. Works on devices with only <strong>8 KB RAM</strong> and full peripheral access.</p>
         <ul>
@@ -148,12 +149,14 @@ footer {
             <li>Controls GPIO, timers, UART, I²C, SPI, etc.</li>
             <li>Architecture-independent design</li>
         </ul>
+        <img src="3osheetRuntime.png" alt="3o|||sheet Runtime">
     </div>
 
     <div class="feature">
-        <img src="virtualmemorymap.png" alt="Memory Map">
+      
         <h2>Memory Map</h2>
         <p>Stack and heap dynamically share a contiguous memory area, allowing flexible memory allocation with minimal overhead.</p>
+          <img src="virtualmemorymap.png" alt="Memory Map">
     </div>
 
     <div class="table-container">
