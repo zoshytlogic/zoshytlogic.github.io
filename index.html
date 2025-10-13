@@ -142,10 +142,14 @@ footer {
     <p>A lightweight, cross-platform IDE built on <strong>OpenJDK</strong>. Runs on single-board computers with minimal resources.</p>
     <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages plus a <strong>virtual machine instruction set</strong> for advanced logic design.</p>
     <p>Offers extensive debugging capabilities: developers can modify code in real-time without physically restarting the PLC.</p>
-    <ul>
-        <li>Classic PLC mode — cyclic model (<code>OB</code>, <code>OB100</code>)</li>
-        <li>RTOS mode — preemptive multitasking via 1 ms timer interrupt</li>
-    </ul>
+    
+            The development environment can create executable programs for the PLC in <strong>two modes:</strong>
+<ul>
+<li><strong style="color: blue;">Classic PLC mode</strong> — cyclic model (OB, OB100). An optimized, economical mode that contains a minimum of additional programs.</li>
+
+<li><strong style="color: blue;">RTOS PLC mode</strong> — preemptive multitasking via a 1 ms timer interrupt. In this case, the IDE will additionally install a virtual <strong>real-time 3o|||sheet OS</strong> to execute tasks in parallel.</li>
+        </p>
+</ul>
         <img src="3osheetIDE.jpg" alt="3o|||sheet IDE">
 </div>
 
