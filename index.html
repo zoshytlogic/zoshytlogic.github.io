@@ -1,305 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3o|||sheet Automation</title>
 
-<!-- saved from url=(0014)about:internet -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3o|||sheet Automation.</title>
-    
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="PLC LogicGather">
-    <meta property="og:description" content="PLCLogicGather.">
-    <meta property="og:image" content="https://zoshytlogic.github.io/PLCLogicGather_.png">
-    <meta property="og:url" content="https://zoshytlogic.github.io/logicgather.html">
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="PLC LogicGather">
+<meta property="og:description" content="PLCLogicGather - lightweight PLC programming environment.">
+<meta property="og:image" content="https://zoshytlogic.github.io/PLCLogicGather_.png">
+<meta property="og:url" content="https://zoshytlogic.github.io/logicgather.html">
 
-    <!-- Twitter meta tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PLC LogicGather">
-    <meta name="twitter:description" content="PLC LogicGather.">
-    <meta name="twitter:image" content="https://zoshytlogic.github.io/PLCLogicGather_.png">
+<!-- Twitter meta tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PLC LogicGather">
+<meta name="twitter:description" content="PLCLogicGather - lightweight PLC programming environment.">
+<meta name="twitter:image" content="https://zoshytlogic.github.io/PLCLogicGather_.png">
+
 <style>
-
-
-  
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top:3%;
-  }
-
- table {
-      width: 100%;
-
-    }
-
-    td {
-      text-align: center;
-      vertical-align: middle;
-
-      padding: 10px;
-    }
-
-.hhh2{
-
-  margin-top:3%;
-  margin-bottom:3%;
-  font-size: 60px !important;
-  color:#5555aa
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
-
-  .hhh3{
-
-  margin-top:5%;
-  margin-bottom:1%;
-  font-size: 40px !important;
-  color:#444444
-}
-
-
-
-  .hhh4{
-
-  margin-top:10%;
-  margin-bottom:3%;
-  font-size: 20px !important;
-  color:#333333
-}
-
-
-  .main-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  table.project {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    border-collapse: collapse;
-  }
-
-  td {
-    vertical-align: top;
+h1, h2, h3 {
     text-align: center;
-    padding: 20px 0;
-  }
+}
+h1 { margin-top: 40px; color: #5555aa; }
+h2 { margin-top: 30px; color: #444; }
+h3 { margin-top: 20px; color: #222; }
 
-  .feature {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    color: #222;
-  }
+p {
+    line-height: 1.6;
+    font-size: 16px;
+    text-align: center;
+}
 
-  .feature img {
-    width: 90%;
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.feature {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.feature img, .feature video {
+    width: 100%;
     max-width: 1080px;
     border-radius: 10px;
     margin-bottom: 16px;
-  }
+}
 
-  .feature .text {
-    width: 95%;
-    max-width: 1080px;
-    text-align: left;
-  }
+.table-container {
+    overflow-x: auto;
+    margin: 40px auto;
+}
 
-  .feature p, .feature ul {
-    line-height: 1.6;
-    font-size: 16px;
-  }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    max-width: 900px;
+}
 
-  @media (max-width: 768px) {
-    .feature img {
-      width: 100%;
-      max-width: 500px;
+table th, table td {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+table th {
+    background-color: #0078d7;
+    color: white;
+}
+
+table#speed-test tbody tr:nth-child(1), 
+table#speed-test tbody tr:nth-child(2) { background-color: #ddffdd; } /* MCU */
+table#speed-test tbody tr:nth-child(3), 
+table#speed-test tbody tr:nth-child(4) { background-color: #ddeeff; } /* PLC */
+
+@media (max-width: 768px) {
+    .feature img, .feature video {
+        max-width: 100%;
     }
-    .feature p, .feature ul {
-      font-size: 15px;
+    table th, table td {
+        padding: 8px 10px;
     }
-  }
-  
-</style></head>
+}
+footer {
+    width: 100%;
+    background-color: #777;
+    color: #00FFFF;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+</style>
+</head>
 
+<body>
 
+<div class="container">
 
+    <div class="feature">
+        <img src="logicgatherplc.png" alt="LogicGather PLC">
+        <h1>3o|||sheet Automation</h1>
+        <p>LogicGather – a PLC for process management. Lightweight development environment supporting <strong>LD</strong> and <strong>ST</strong> programming languages according to IEC 61131-3.</p>
+    </div>
 
-
-<body><table>
-
-  <tbody><tr>   <td> </td>
-<td>
-
-
-
-<div style="position: relative; width: 100%; height: 100%;">
-
-  <img src="logicgatherplc.png" alt="Image" style="width: 100%; height: 100%; object-fit: cover;">
-  <p class="hhh2">3o|||sheet Automation.</p>
-  <p style="position: absolute; bottom: 40%; left: 5%; color: gray; font-size: 40px; text-align: left;">
-    LogicGather – a PLC for  <br> process management.
-  </p>
-  
-</div>
-
-
-<p class="hhh4"><span style="color:#88aacc">3O|||SHEET</span> is a lightweight development environment for programming industrial controllers LogicGather, with support for <span style="color:#6699cc"> LD </span> and <span style="color:#6699cc">ST</span> programming languages according to the <span style="color:#6699cc"> IEC 61131-3</span> standard.</p>
-
-  
-
-  <div style="margin-top:2%;">_</div>
-
-
-
-
-
-
-
-<div class="main-container">
-  <table class="project">
-          <tr>
-      <td>
-        <!-- 3osheet IDE -->
-        <div class="feature">
-          <video style="width:100%;" controls="" autoplay="" muted="" loop="">
-        <source src="3osheetRes.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+    <div class="feature">
+        <video controls autoplay muted loop>
+            <source src="3osheetRes.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <!-- 3osheet IDE -->
-        <div class="feature">
-          <img src="3osheetIDE.jpg" alt="3osheet IDE">
-          <div class="text">
-            <h3>3o|||sheets IDE</h3>
-            A lightweight, cross-platform IDE built on <strong>OpenJDK</strong>. Runs even on single-board computers with minimal resources.</p>
-            <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages plus a <strong>virtual machine instruction set</strong> for advanced logic design.</p>
-            <p>In <strong>debug mode</strong>, developers can pause and rewrite individual tasks live — without stopping the system.</p>
-            <ul>
-              <li><strong>Classic PLC mode</strong> — cyclic model (<code>OB</code>, <code>OB100</code>).</li>
-              <li><strong>RTOS mode</strong> — preemptive multitasking via 1 ms timer interrupt.</li>
-            </ul>
-          </div>
-        </div>
-      </td>
-    </tr>
+    </div>
 
-    <tr>
-      <td>
-        <!-- 3osheet Compiler -->
-        <div class="feature">
-          <img src="3osheetcompile.png" alt="3osheet Compiler">
-          <div class="text">
-            <h3>3o|||sheet Compiler</h3>
-            <p>The compiles instruction text into <strong>bytecode</strong>.</p>
-            <p>Its <code>.3osheet</code> language blends <strong>high-level syntax</strong> with <strong>atomic assembly-like instructions</strong> executed by the VM runtime.</p>
-            <p>Supports <strong>virtual stack</strong> and <strong>context management</strong> — ideal for recursive multitasking programs.</p>
-          </div>
-        </div>
-      </td>
-    </tr>
+    <div class="feature">
+        <img src="3osheetIDE.jpg" alt="3o|||sheet IDE">
+        <h2>3o|||sheet IDE</h2>
+        <p>A lightweight, cross-platform IDE built on <strong>OpenJDK</strong>. Runs on single-board computers with minimal resources.</p>
+        <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages plus a <strong>virtual machine instruction set</strong> for advanced logic design.</p>
+        <ul>
+            <li>Classic PLC mode — cyclic model (<code>OB</code>, <code>OB100</code>)</li>
+            <li>RTOS mode — preemptive multitasking via 1 ms timer interrupt</li>
+        </ul>
+    </div>
 
-    <tr>
-      <td>
-        <!-- 3osheet Runtime -->
-        <div class="feature">
-          <img src="3osheetRuntime.png" alt="3osheet Runtime">
-          <div class="text">
-            <h3>3o|||sheet Runtime</h3>
-            <h4>Register-based Virtual Machine</h4>
-            <p>A <strong>register-based virtual machine</strong> running safely in a sandbox. Works on devices with only <strong>8 KB RAM</strong> and full peripheral access.</p>
-            <p>No architecture-specific code — portable to any MCU.</p>
-            <ul>
-              <li>Runs on low-memory devices (~8 KB RAM)</li>
-              <li>Safe sandboxed execution</li>
-              <li>Controls GPIO, timers, UART, I²C, SPI, etc.</li>
-              <li>Architecture-independent design</li>
-            </ul>
-          </div>
-        </div>
-      </td>
-    </tr>
-  </table>
+    <div class="feature">
+        <img src="3osheetcompile.png" alt="3o|||sheet Compiler">
+        <h2>3o|||sheet Compiler</h2>
+        <p>Compiles instruction text into <strong>bytecode</strong> executed by the VM runtime.</p>
+        <p>Supports <strong>virtual stack</strong> and <strong>context management</strong> — ideal for recursive multitasking programs.</p>
+    </div>
+
+    <div class="feature">
+        <img src="3osheetRuntime.png" alt="3o|||sheet Runtime">
+        <h2>3o|||sheet Runtime</h2>
+        <p>Register-based Virtual Machine running safely in a sandbox. Works on devices with only <strong>8 KB RAM</strong> and full peripheral access.</p>
+        <ul>
+            <li>Low-memory devices (~8 KB RAM)</li>
+            <li>Safe sandboxed execution</li>
+            <li>Controls GPIO, timers, UART, I²C, SPI, etc.</li>
+            <li>Architecture-independent design</li>
+        </ul>
+    </div>
+
+    <div class="feature">
+        <img src="virtualmemorymap.png" alt="Memory Map">
+        <h2>Memory Map</h2>
+        <p>Stack and heap dynamically share a contiguous memory area, allowing flexible memory allocation with minimal overhead.</p>
+    </div>
+
+    <div class="table-container">
+        <h2>LD Instruction Processing Speed Test</h2>
+        <p>Measured execution times for boolean and floating-point operations on different microcontrollers and PLCs.</p>
+        <table id="speed-test">
+            <thead>
+                <tr>
+                    <th>Device</th>
+                    <th>Boolean Operation</th>
+                    <th>Floating-Point Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CH32V307</td>
+                    <td>1 μs</td>
+                    <td>2.5 μs</td>
+                </tr>
+                <tr>
+                    <td>STM32F407</td>
+                    <td>0.8 μs</td>
+                    <td>2 μs</td>
+                </tr>
+                <tr>
+                    <td>Rockwell Logix 5000</td>
+                    <td>~0.8–1 ms</td>
+                    <td>~2–3 ms</td>
+                </tr>
+                <tr>
+                    <td>Siemens S7-1200</td>
+                    <td>~1–2 ms</td>
+                    <td>~3–5 ms</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
+<footer>
+    zoshytlogic@gmail.com
+</footer>
 
-
-        <div class="feature">
-          <img src="virtualmemorymap.png" alt="3osheet Runtime">
-
-        </div>
-
-    
-
-
-<h1>LD Instruction Processing Speed Test</h1>
-    <p style="text-align:center;">Measured execution times for boolean and floating-point operations on different microcontrollers and PLCs.</p>
-
-    <table>
-        <caption>Execution Time Comparison</caption>
-        <thead>
-            <tr>
-                <th>Device</th>
-                <th>Boolean Operation</th>
-                <th>Floating-Point Operation</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>CH32V307</td>
-                <td>1 μs</td>
-                <td>2.5 μs</td>
-            </tr>
-            <tr>
-                <td>STM32F407</td>
-                <td>0.8 μs</td>
-                <td>2 μs</td>
-            </tr>
-            <tr>
-                <td>Rockwell Logix 5000</td>
-                <td>~0.8–1 ms</td>
-                <td>~2–3 ms</td>
-            </tr>
-            <tr>
-                <td>Siemens S7-1200</td>
-                <td>~1–2 ms</td>
-                <td>~3–5 ms</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
-
-
-
-
-
-
-
-
- 
-<p style="position: absolute; top: 72%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 40px; text-align: center;">
-
-_
-</p>
-</div>
-
-
-
-
-  <p style="width:100%;height:100px; background-color:#777777; color:#00FFFF">zoshytlogic@gmail.com</p>
-</td>
-<td></td>
-
-</tr>
-
-</tbody></table>
-
-</body></html>
+</body>
+</html>
