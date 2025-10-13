@@ -238,7 +238,41 @@
     
 
 
+<h1>LD Instruction Processing Speed Test</h1>
+    <p style="text-align:center;">Measured execution times for boolean and floating-point operations on different microcontrollers and PLCs.</p>
 
+    <table>
+        <caption>Execution Time Comparison</caption>
+        <thead>
+            <tr>
+                <th>Device</th>
+                <th>Boolean Operation</th>
+                <th>Floating-Point Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CH32V307</td>
+                <td>1 μs</td>
+                <td>2.5 μs</td>
+            </tr>
+            <tr>
+                <td>STM32F407</td>
+                <td>0.8 μs</td>
+                <td>2 μs</td>
+            </tr>
+            <tr>
+                <td>Rockwell Logix 5000</td>
+                <td>~0.8–1 ms</td>
+                <td>~2–3 ms</td>
+            </tr>
+            <tr>
+                <td>Siemens S7-1200</td>
+                <td>~1–2 ms</td>
+                <td>~3–5 ms</td>
+            </tr>
+        </tbody>
+    </table>
 
 
 
