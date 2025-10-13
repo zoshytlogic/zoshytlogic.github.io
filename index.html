@@ -6,15 +6,15 @@
 <title>3o|||sheet Automation</title>
 
 <!-- Open Graph meta tags -->
-<meta property="og:title" content="PLC LogicGather">
-<meta property="og:description" content="PLCLogicGather - lightweight PLC programming environment.">
+<meta property="og:title" content="3o|||sheet Automation">
+<meta property="og:description" content="Universal software environment for PLC programming">
 <meta property="og:image" content="https://zoshytlogic.github.io/PLCLogicGather_.png">
 <meta property="og:url" content="https://zoshytlogic.github.io/logicgather.html">
 
 <!-- Twitter meta tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PLC LogicGather">
-<meta name="twitter:description" content="PLCLogicGather - lightweight PLC programming environment.">
+<meta name="twitter:title" content="3o|||sheet Automation">
+<meta name="twitter:description" content="Universal software environment for PLC programming">
 <meta name="twitter:image" content="https://zoshytlogic.github.io/PLCLogicGather_.png">
 
 <style>
@@ -23,19 +23,15 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    line-height: 1.6;
 }
+
 h1, h2, h3 {
     text-align: center;
 }
 h1 { margin-top: 40px; color: #5555aa; }
 h2 { margin-top: 30px; color: #444; }
 h3 { margin-top: 20px; color: #222; }
-
-p {
-    line-height: 1.6;
-    font-size: 16px;
-    text-align: center;
-}
 
 .container {
     max-width: 1080px;
@@ -45,7 +41,6 @@ p {
 
 .feature {
     margin: 40px 0;
-
 }
 
 .feature img, .feature video {
@@ -53,6 +48,28 @@ p {
     max-width: 1080px;
     border-radius: 10px;
     margin-bottom: 16px;
+}
+
+/* Left alignment for text content */
+.text-content {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.text-content p {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.text-content ul {
+    margin: 15px 0;
+    padding-left: 40px;
+    text-align: left;
+}
+
+.text-content li {
+    margin: 8px 0;
+    text-align: left;
 }
 
 .table-container {
@@ -79,9 +96,20 @@ table th {
 }
 
 table#speed-test tbody tr:nth-child(1), 
-table#speed-test tbody tr:nth-child(2) { background-color: #ddffdd; } /* MCU */
-table#speed-test tbody tr:nth-child(3), 
-table#speed-test tbody tr:nth-child(4) { background-color: #ddeeff; } /* PLC */
+table#speed-test tbody tr:nth-child(2), 
+table#speed-test tbody tr:nth-child(3) { 
+    background-color: #ddffdd; 
+}
+
+table#speed-test tbody tr:nth-child(4), 
+table#speed-test tbody tr:nth-child(5) { 
+    background-color: #ddeeff; 
+}
+
+.blue-text {
+    color: blue;
+    font-weight: bold;
+}
 
 @media (max-width: 768px) {
     .feature img, .feature video {
@@ -90,7 +118,11 @@ table#speed-test tbody tr:nth-child(4) { background-color: #ddeeff; } /* PLC */
     table th, table td {
         padding: 8px 10px;
     }
+    .text-content ul {
+        padding-left: 20px;
+    }
 }
+
 footer {
     width: 100%;
     background-color: #777;
@@ -109,25 +141,19 @@ footer {
     <div class="feature">
         <img src="logicgatherplc.png" alt="LogicGather PLC">
         <h1>3o|||sheet Automation</h1>
-
     </div>
 
-
-       <div class="feature">
-    <p> is a universal software environment for developing applications for Programmable Logic Controllers (PLCs).</p>
-
-    <ul>
-        <li>Hardware Independence</li>
-        <li>Integrated Development Environment (IDE).</li>
-    </ul>
-
-
-             <img src="Complex.png" alt="3o|||sheet">
-   
+    <div class="feature">
+        <div class="text-content">
+            <p>3o|||sheet is a universal software environment for developing applications for Programmable Logic Controllers (PLCs).</p>
+            
+            <ul>
+                <li>Hardware Independence</li>
+                <li>Integrated Development Environment (IDE)</li>
+            </ul>
+        </div>
+        <img src="Complex.png" alt="3o|||sheet">
     </div>
-
-
-    
 
     <div class="feature">
         <video controls autoplay muted loop>
@@ -136,55 +162,60 @@ footer {
         </video>
     </div>
 
-<div class="feature">
-    <h2>3o|||sheet IDE</h2>
-    <p  style="padding-left: 20px; margin-left: 0;">
-    <p>A lightweight, cross-platform IDE built on <strong>OpenJDK</strong>. Runs on single-board computers with minimal resources.</p>
-    <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages plus a <strong>virtual machine instruction set</strong> for advanced logic design.</p>
-    <p>Offers extensive debugging capabilities: developers can modify code in real-time without physically restarting the PLC.</p>
-</p>
-    The development environment can create executable programs for the PLC in <strong>two modes:</strong>
-    <ul style="padding-left: 20px; margin-left: 0;">
-        <li><strong style="color: blue;">Classic PLC mode</strong> — cyclic model (OB, OB100). An optimized, economical mode that contains a minimum of additional programs.</li>
-        <li><strong style="color: blue;">RTOS PLC mode</strong> — preemptive multitasking via a 1 ms timer interrupt. In this case, the IDE will additionally install a virtual <strong>real-time 3o|||sheet OS</strong> to execute tasks in parallel.</li>
-    </ul>
-    <img src="3osheetIDE.jpg" alt="3o|||sheet IDE">
-</div>
-
+    <div class="feature">
+        <h2>3o|||sheet IDE</h2>
+        <div class="text-content">
+            <p>A lightweight, cross-platform IDE built on <strong>OpenJDK</strong>. Runs on single-board computers with minimal resources.</p>
+            <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages plus a <strong>virtual machine instruction set</strong> for advanced logic design.</p>
+            <p>Offers extensive debugging capabilities: developers can modify code in real-time without physically restarting the PLC.</p>
+            
+            <p>The development environment can create executable programs for the PLC in <strong>two modes:</strong></p>
+            
+            <ul>
+                <li><span class="blue-text">Classic PLC mode</span> — cyclic model (OB, OB100). An optimized, economical mode that contains a minimum of additional programs.</li>
+                <li><span class="blue-text">RTOS PLC mode</span> — preemptive multitasking via a 1 ms timer interrupt. In this case, the IDE will additionally install a virtual <strong>real-time 3o|||sheet OS</strong> to execute tasks in parallel.</li>
+            </ul>
+        </div>
+        <img src="3osheetIDE.jpg" alt="3o|||sheet IDE">
+    </div>
 
     <div class="feature">
-        
         <h2>3o|||sheet Compiler</h2>
-        <p>Is a standalone application that compiles text programs written in <strong>LD</strong>,  <strong>FBD</strong>,  <strong>ST</strong> abd  <strong>.3osheet</strong>  into executable bytecode for a virtual machine.</p>
-        <p>The compiler can be integrated into third-party development tools (for example, <strong>>Visual Studio</strong, etc.).</p>
-        <p>It includes a complete set of tools for working with complex custom variables, <strong>virtual stack</strong>, and <strong>context management</strong>, 
-            enabling the development of sophisticated recursive algorithms and multithreaded tasks  <strong>(coroutines)</strong>.
+        <div class="text-content">
+            <p>Is a standalone application that compiles text programs written in <strong>LD</strong>, <strong>FBD</strong>, <strong>ST</strong> and <strong>.3osheet</strong> into executable bytecode for a virtual machine.</p>
+            <p>The compiler can be integrated into third-party development tools (for example, <strong>Visual Studio</strong>, etc.).</p>
+            <p>It includes a complete set of tools for working with complex custom variables, <strong>virtual stack</strong>, and <strong>context management</strong>, enabling the development of sophisticated recursive algorithms and multithreaded tasks <strong>(coroutines)</strong>.</p>
+        </div>
         <img src="3osheetcompile.png" alt="3o|||sheet Compiler">
     </div>
 
     <div class="feature">
-        
         <h2>3o|||sheet Runtime</h2>
-        <p>Register-based Virtual Machine running safely in a sandbox. Works on devices with only <strong>8 KB RAM</strong> and full peripheral access.</p>
-        <ul  style="padding-left: 20px; margin-left: 0;">
-            <li>Low-memory devices (~8 KB RAM)</li>
-            <li>Safe sandboxed execution</li>
-            <li>Controls GPIO, timers, UART, I²C, SPI, etc.</li>
-            <li>Architecture-independent design</li>
-        </ul>
+        <div class="text-content">
+            <p>Register-based Virtual Machine running safely in a sandbox. Works on devices with only <strong>8 KB RAM</strong> and full peripheral access.</p>
+            <ul>
+                <li>Low-memory devices (~8 KB RAM)</li>
+                <li>Safe sandboxed execution</li>
+                <li>Controls GPIO, timers, UART, I²C, SPI, etc.</li>
+                <li>Architecture-independent design</li>
+            </ul>
+        </div>
         <img src="3osheetRuntime.png" alt="3o|||sheet Runtime">
     </div>
 
     <div class="feature">
-      
         <h2>Memory Map</h2>
-        <p>Stack and heap dynamically share a contiguous memory area, allowing flexible memory allocation with minimal overhead.</p>
-          <img src="virtualmemorymap.png" alt="Memory Map">
+        <div class="text-content">
+            <p>Stack and heap dynamically share a contiguous memory area, allowing flexible memory allocation with minimal overhead.</p>
+        </div>
+        <img src="virtualmemorymap.png" alt="Memory Map">
     </div>
 
     <div class="table-container">
         <h2>LD Instruction Execution Times</h2>
-        <p>Measured execution times for boolean and floating-point operations on different microcontrollers and PLCs.</p>
+        <div class="text-content">
+            <p>Measured execution times for boolean and floating-point operations on different microcontrollers and PLCs.</p>
+        </div>
         <table id="speed-test">
             <thead>
                 <tr>
@@ -195,25 +226,24 @@ footer {
             </thead>
             <tbody>
                 <tr>
-                    <td>CH32V307 144Mhz(<span style="color: blue;">3o|||sheet Runtime</span>)</td>
+                    <td>CH32V307 144Mhz (<span class="blue-text">3o|||sheet Runtime</span>)</td>
                     <td>1 μs</td>
                     <td>2.5 μs</td>
                 </tr>
                 <tr>
-                    <td>STM32F407 168Mhz(<span style="color: blue;">3o|||sheet Runtime</span>)</td>
+                    <td>STM32F407 168Mhz (<span class="blue-text">3o|||sheet Runtime</span>)</td>
                     <td>0.8 μs</td>
                     <td>2 μs</td>
                 </tr>
                 <tr>
-                    <td>STM32H743 480Mhz(<span style="color: blue;">3o|||sheet Runtime</span>)</td>
+                    <td>STM32H743 480Mhz (<span class="blue-text">3o|||sheet Runtime</span>)</td>
                     <td>0.2 μs</td>
                     <td>0.5 μs</td>
                 </tr>
-                
                 <tr>
                     <td>Rockwell Compact GuardLogix 5380 1Ghz</td>
-                    <td>~0.01–0.05  μs</td>
-                    <td>~~0.01–0.08  μs</td>
+                    <td>~0.01–0.05 μs</td>
+                    <td>~0.01–0.08 μs</td>
                 </tr>
                 <tr>
                     <td>Siemens S7-1200</td>
