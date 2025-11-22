@@ -11,7 +11,12 @@ it must translate into our `.3osheet` code. Although the system's data/variables
 There is no redundancy for variables. Unlike Lua, Java, or MicroPython, where a `bool` variable can take over 20 bytes, here everything is optimized for extremely limited hardware. All responsibility for typing and array handling lies with the compiler.
 
 **3o|||sheet Runtime**: A register-based virtual machine running on the hardware. Written in C. It does not use low-level code for specific architectures and compiles quickly for any hardware (ARM, RISC-V, x86); 
-the difference lies only in peripheral configuration, which can also be initialized from the virtual level. Minimum system requirements: 4 KB RAM, 48 KB Flash (full version), 32 KB Flash (limited version). 
+the difference lies only in peripheral configuration, which can also be initialized from the virtual level. 
+
+Minimum system requirements:
+4 KB RAM, 64 KB Flash (full version), 
+32 KB Flash (limited version). 
+
 These requirements are for the virtual machine only. User programs require additional program memory (to RAM and Flash), with an approximate calculation of 8-12 bytes per basic instruction for LD language, and 60-100 bytes per timer/counter. For custom LD/FBD, each atomic instruction within it (ADD, SUB, various increments, branch jumps) is 4 bytes. 3o|||sheet Runtime is a full-fledged machine. It contains all necessary instruction types, including those for working with the virtual stack/task context. This allows execution of any programs (deep function calls, recursion, multithreading/multi-core). It was specifically developed for IACS and strict task execution timeframes.
 
 **Advantages over Global Brands**
