@@ -26,7 +26,6 @@ A lightweight, cross-platform development environment that can even run on singl
 A proprietary, self-developed, independent, and cross-platform application. The most intelligent part of the system.
 
 *   **Flexibility:** Programs can be written without the IDE using any text editor (e.g., Visual Studio Code).
-*   **Competition:** This development competes with major brands in Industrial Automation and Control Systems (IACS), aiming to surpass Codesys.
 *   **Native Code Style:** A hybrid of assembly syntax (instructions) and C language (data), designed for simple translation of other high-level languages to the platform.
 *   **Universal Target:** Any development environment (LD, FBD, ST) must translate into our `.3osheet` code.
 *   **Optimized for Weak Hardware:**
