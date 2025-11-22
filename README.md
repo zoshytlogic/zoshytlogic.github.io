@@ -41,7 +41,7 @@ A register-based virtual machine running on the hardware, written in C.
 *   **Portability:** Does not use low-level architecture-specific code. Compiles quickly for ARM, RISC-V, x86. Peripheral configuration can be initialized from the virtual level.
 *   **Minimal Requirements:**
     *   **4 KB RAM**
-    *   **48 KB Flash** (full version)
+    *   **64 KB Flash** (full version)
     *   **32 KB Flash** (limited version)
     *   *Note: These are for the VM only. User programs require additional memory.*
 *   **Memory Footprint (Approx.):**
