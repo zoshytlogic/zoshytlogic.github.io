@@ -256,84 +256,51 @@ footer {
         <img src="multitask.png" alt="Memory Map">
     </div>
 
-    <!-- НОВЫЙ РАЗДЕЛ: Дивергентная архитектура -->
-    <div class="feature">
-        <h2>Divergent Multi-Version Execution (DME)</h2>
-        <div class="text-content">
-            <p><strong>Дивергентность как архитектурная особенность:</strong> DME — это метод обеспечения отказоустойчивости, при котором несколько копий одной программы выполняются с одинаковыми инструкциями, но с уникальными адресными пространствами. После каждой инструкции вычисляется криптографический хэш состояния; любое расхождение мгновенно обнаруживается.</p>
-            
-            <p>Ключевое преимущество: защита от коррелированных сбоев, которые поражают все реплики одинаково в традиционных системах (Lockstep, TMR). Дивергентность гарантирует, что любой сбой проявится как расхождение хэшей.</p>
-            
-            <p>Прототип на ARM Cortex-M4 демонстрирует обнаружение сбоя с задержкой в одну инструкцию при накладных расходах 15–30%.</p>
-        </div>
-    </div>
 
-    <!-- НОВАЯ ТАБЛИЦА: Обнаружение ошибок -->
-    <div class="table-container">
-        <h2>Fault Detection Coverage by DME</h2>
-        <div class="text-content">
-            <p>Классификация сбоев и способность DME их обнаруживать при различной глубине хэширования (m = 1, 2, 3).</p>
-        </div>
-        <table id="fault-detection">
-            <thead>
-                <tr>
-                    <th>Fault Class</th>
-                    <th>Detection (m=1)<br><small>Instruction only</small></th>
-                    <th>Detection (m=2)<br><small>+ Computation</small></th>
-                    <th>Detection (m=3)<br><small>+ Full state</small></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Program Counter (PC) corruption</td>
-                    <td class="detection-yes">✓ YES</td>
-                    <td class="detection-yes">✓ YES</td>
-                    <td class="detection-yes">✓ YES</td>
-                </tr>
-                <tr>
-                    <td>Control-flow redirection (jump/call target error)</td>
-                    <td class="detection-yes">✓ YES</td>
-                    <td class="detection-yes">✓ YES</td>
-                    <td class="detection-yes">✓ YES</td>
-                </tr>
-                <tr>
-                    <td>ALU operation errors (bit flips in computation)</td>
-                    <td class="detection-no">✗ NO</td>
-                    <td class="detection-yes">✓ YES</td>
-                    <td class="detection-yes">✓ YES</td>
-                </tr>
-                <tr>
-                    <td>Register file corruption</td>
-                    <td class="detection-no">✗ NO</td>
-                    <td class="detection-yes">✓ YES</td>
-                    <td class="detection-yes">✓ YES</td>
-                </tr>
-                <tr>
-                    <td>Memory load/store corruption</td>
-                    <td class="detection-no">✗ NO</td>
-                    <td class="detection-no">✗ NO*</td>
-                    <td class="detection-yes">✓ YES</td>
-                </tr>
-                <tr>
-                    <td>Hash unit faults</td>
-                    <td class="detection-no">✗ NO**</td>
-                    <td class="detection-no">✗ NO**</td>
-                    <td class="detection-no">✗ NO**</td>
-                </tr>
-                <tr>
-                    <td>Shared physical faults (clock, power, EMI)</td>
-                    <td class="detection-no">✗ NO***</td>
-                    <td class="detection-no">✗ NO***</td>
-                    <td class="detection-no">✗ NO***</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="text-content">
-            <p><small>* При m=2 результат операции может быть корректен, но данные в памяти могут быть повреждены без обнаружения.<br>
-            ** Сбои в самом хэш-блоке требуют отдельной защиты (например, дублирования хэш-вычислителя).<br>
-            *** Требуют физической изоляции (отдельные чипы, разное питание, тактирование).</small></p>
-        </div>
+<div class="feature">
+    <h2>Unique Divergent Architecture</h2>
+    <div class="text-content">
+        <p>The platform incorporates a unique divergent architecture designed for maximum reliability and fault tolerance in safety-critical applications.</p>
     </div>
+</div>
+
+
+<div class="table-container">
+    <h2>Fault Detection Coverage</h2>
+    <div class="text-content">
+        <p>Comprehensive fault detection across different execution modes.</p>
+    </div>
+    <table id="fault-detection">
+        <thead>
+            <tr>
+                <th>Fault Class</th>
+                <th>Mode 1</th>
+                <th>Mode 2</th>
+                <th>Mode 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Program flow errors</td>
+                <td class="detection-yes">✓ YES</td>
+                <td class="detection-yes">✓ YES</td>
+                <td class="detection-yes">✓ YES</td>
+            </tr>
+            <tr>
+                <td>Computation errors</td>
+                <td class="detection-no">✗ NO</td>
+                <td class="detection-yes">✓ YES</td>
+                <td class="detection-yes">✓ YES</td>
+            </tr>
+            <tr>
+                <td>Data corruption</td>
+                <td class="detection-no">✗ NO</td>
+                <td class="detection-no">✗ NO</td>
+                <td class="detection-yes">✓ YES</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
     <div class="table-container">
         <h2>LD Instruction Execution Times</h2>
