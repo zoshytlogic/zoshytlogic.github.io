@@ -111,6 +111,42 @@ table#speed-test tbody tr:nth-child(5) {
     font-weight: bold;
 }
 
+/* Стили для новой таблицы обнаружения ошибок */
+table#fault-detection {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+table#fault-detection th {
+    background-color: #5555aa;
+}
+
+table#fault-detection td {
+    text-align: left;
+    padding: 10px 15px;
+}
+
+table#fault-detection td:first-child {
+    font-weight: bold;
+    text-align: center;
+    width: 30%;
+}
+
+.detection-yes {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.detection-no {
+    color: #c62828;
+    font-weight: bold;
+}
+
+.detection-partial {
+    color: #f57c00;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
     .feature img, .feature video {
         max-width: 100%;
@@ -212,11 +248,7 @@ footer {
         <img src="virtualmemorymap.png" alt="Memory Map">
     </div>
 
-
-
-
-
-     <div class="feature">
+    <div class="feature">
         <h2>Multi-VM Architecture:</h2>
         <div class="text-content">
             <p>Execute multiple, hardware-isolated runtime environments on a single MCU. Ensures fault containment and enables functional safety.</p>
@@ -224,23 +256,84 @@ footer {
         <img src="multitask.png" alt="Memory Map">
     </div>
 
+    <!-- НОВЫЙ РАЗДЕЛ: Дивергентная архитектура -->
+    <div class="feature">
+        <h2>Divergent Multi-Version Execution (DME)</h2>
+        <div class="text-content">
+            <p><strong>Дивергентность как архитектурная особенность:</strong> DME — это метод обеспечения отказоустойчивости, при котором несколько копий одной программы выполняются с одинаковыми инструкциями, но с уникальными адресными пространствами. После каждой инструкции вычисляется криптографический хэш состояния; любое расхождение мгновенно обнаруживается.</p>
+            
+            <p>Ключевое преимущество: защита от коррелированных сбоев, которые поражают все реплики одинаково в традиционных системах (Lockstep, TMR). Дивергентность гарантирует, что любой сбой проявится как расхождение хэшей.</p>
+            
+            <p>Прототип на ARM Cortex-M4 демонстрирует обнаружение сбоя с задержкой в одну инструкцию при накладных расходах 15–30%.</p>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    <!-- НОВАЯ ТАБЛИЦА: Обнаружение ошибок -->
+    <div class="table-container">
+        <h2>Fault Detection Coverage by DME</h2>
+        <div class="text-content">
+            <p>Классификация сбоев и способность DME их обнаруживать при различной глубине хэширования (m = 1, 2, 3).</p>
+        </div>
+        <table id="fault-detection">
+            <thead>
+                <tr>
+                    <th>Fault Class</th>
+                    <th>Detection (m=1)<br><small>Instruction only</small></th>
+                    <th>Detection (m=2)<br><small>+ Computation</small></th>
+                    <th>Detection (m=3)<br><small>+ Full state</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Program Counter (PC) corruption</td>
+                    <td class="detection-yes">✓ YES</td>
+                    <td class="detection-yes">✓ YES</td>
+                    <td class="detection-yes">✓ YES</td>
+                </tr>
+                <tr>
+                    <td>Control-flow redirection (jump/call target error)</td>
+                    <td class="detection-yes">✓ YES</td>
+                    <td class="detection-yes">✓ YES</td>
+                    <td class="detection-yes">✓ YES</td>
+                </tr>
+                <tr>
+                    <td>ALU operation errors (bit flips in computation)</td>
+                    <td class="detection-no">✗ NO</td>
+                    <td class="detection-yes">✓ YES</td>
+                    <td class="detection-yes">✓ YES</td>
+                </tr>
+                <tr>
+                    <td>Register file corruption</td>
+                    <td class="detection-no">✗ NO</td>
+                    <td class="detection-yes">✓ YES</td>
+                    <td class="detection-yes">✓ YES</td>
+                </tr>
+                <tr>
+                    <td>Memory load/store corruption</td>
+                    <td class="detection-no">✗ NO</td>
+                    <td class="detection-no">✗ NO*</td>
+                    <td class="detection-yes">✓ YES</td>
+                </tr>
+                <tr>
+                    <td>Hash unit faults</td>
+                    <td class="detection-no">✗ NO**</td>
+                    <td class="detection-no">✗ NO**</td>
+                    <td class="detection-no">✗ NO**</td>
+                </tr>
+                <tr>
+                    <td>Shared physical faults (clock, power, EMI)</td>
+                    <td class="detection-no">✗ NO***</td>
+                    <td class="detection-no">✗ NO***</td>
+                    <td class="detection-no">✗ NO***</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-content">
+            <p><small>* При m=2 результат операции может быть корректен, но данные в памяти могут быть повреждены без обнаружения.<br>
+            ** Сбои в самом хэш-блоке требуют отдельной защиты (например, дублирования хэш-вычислителя).<br>
+            *** Требуют физической изоляции (отдельные чипы, разное питание, тактирование).</small></p>
+        </div>
+    </div>
 
     <div class="table-container">
         <h2>LD Instruction Execution Times</h2>
@@ -276,14 +369,11 @@ footer {
                     <td>1.8 μs</td>
                     <td>3.5 μs</td>
                 </tr>
-
-
                 <tr>
                     <td>Rockwell Micro810</td>
                     <td>2.5 μs</td>
                     <td>8.6 μs</td>
                 </tr>
-   
                 <tr>
                     <td>Rockwell Compact GuardLogix 5380 1Ghz</td>
                     <td>~0.01–0.05 μs</td>
