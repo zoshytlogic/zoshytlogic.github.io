@@ -260,7 +260,12 @@ footer {
 <div class="feature">
     <h2>Unique Divergent Architecture</h2>
     <div class="text-content">
-        <p>The platform incorporates a unique divergent architecture designed for maximum reliability and fault tolerance in safety-critical applications.</p>
+        <p>The platform incorporates a unique divergent architecture designed for maximum reliability and fault tolerance in safety-critical applications.
+        
+        Divergent Multi-Version Execution (DME) is a redundancy-based fault-tolerance architecture that combines address-space decorrelation with per-instruction full-state hashing. Identical instruction bytes are preserved across replicas, while basic blocks are mapped to distinct virtual addresses. After each instruction, replicas compute incremental architectural state hashes and perform synchronous comparison.
+
+The approach targets safety-critical embedded systems, particularly 32-bit microcontrollers (e.g., ARM Cortex-M class). DME reduces the probability of undetected replica-local faults by structurally decorrelating control flow without altering program semantics.
+        </p>
     </div>
 </div>
 
