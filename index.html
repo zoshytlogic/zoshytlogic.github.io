@@ -3,375 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3o|||sheet Automation</title>
 
-<!-- Open Graph meta tags -->
+<title>3o|||sheet Automation — Lightweight PLC Runtime for Microcontrollers</title>
+
 <meta property="og:title" content="3o|||sheet Automation">
-<meta property="og:description" content="Universal software environment for PLC programming">
+<meta property="og:description" content="Open-source PLC toolchain and sandboxed virtual machine for small microcontrollers with optional fault-tolerant execution (DME).">
 <meta property="og:image" content="https://zoshytlogic.github.io/PLCLogicGather_.png">
-<meta property="og:url" content="https://zoshytlogic.github.io/logicgather.html">
-
-<!-- Twitter meta tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="3o|||sheet Automation">
-<meta name="twitter:description" content="Universal software environment for PLC programming">
-<meta name="twitter:image" content="https://zoshytlogic.github.io/PLCLogicGather_.png">
 
 <style>
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
     color: #333;
     line-height: 1.6;
 }
 
-h1, h2, h3 {
-    text-align: center;
-}
-h1 { margin-top: 40px; color: #5555aa; }
-h2 { margin-top: 30px; color: #444; }
-h3 { margin-top: 20px; color: #222; }
-
 .container {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 24px;
 }
 
-.feature {
-    margin: 40px 0;
+h1, h2 {
+    text-align: center;
+    margin-top: 40px;
 }
 
-.feature img, .feature video {
+.hero {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.section {
+    margin: 60px 0;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+img, video {
     width: 100%;
-    max-width: 1080px;
-    border-radius: 10px;
-    margin-bottom: 16px;
-}
-
-/* Left alignment for text content */
-.text-content {
-    text-align: left;
-    margin: 20px 0;
-}
-
-.text-content p {
-    margin: 15px 0;
-    text-align: left;
-}
-
-.text-content ul {
-    margin: 15px 0;
-    padding-left: 40px;
-    text-align: left;
-}
-
-.text-content li {
-    margin: 8px 0;
-    text-align: left;
-}
-
-.table-container {
-    overflow-x: auto;
-    margin: 40px auto;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 0 auto;
-    max-width: 900px;
+    margin-top: 20px;
 }
 
-table th, table td {
-    padding: 12px 20px;
+th, td {
     border: 1px solid #ccc;
+    padding: 10px;
     text-align: center;
 }
 
-table th {
-    background-color: #0078d7;
+th {
+    background: #5555aa;
     color: white;
 }
 
-table#speed-test tbody tr:nth-child(1), 
-table#speed-test tbody tr:nth-child(2), 
-table#speed-test tbody tr:nth-child(3) { 
-    background-color: #ddffdd; 
-}
-
-table#speed-test tbody tr:nth-child(4), 
-table#speed-test tbody tr:nth-child(5) { 
-    background-color: #ddeeff; 
-}
-
-.blue-text {
-    color: blue;
-    font-weight: bold;
-}
-
-/* Стили для новой таблицы обнаружения ошибок */
-table#fault-detection {
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
-table#fault-detection th {
-    background-color: #5555aa;
-}
-
-table#fault-detection td {
-    text-align: left;
-    padding: 10px 15px;
-}
-
-table#fault-detection td:first-child {
-    font-weight: bold;
-    text-align: center;
-    width: 30%;
-}
-
-.detection-yes {
-    color: #2e7d32;
-    font-weight: bold;
-}
-
-.detection-no {
-    color: #c62828;
-    font-weight: bold;
-}
-
-.detection-partial {
-    color: #f57c00;
-    font-weight: bold;
-}
-
-@media (max-width: 768px) {
-    .feature img, .feature video {
-        max-width: 100%;
-    }
-    table th, table td {
-        padding: 8px 10px;
-    }
-    .text-content ul {
-        padding-left: 20px;
-    }
-}
-
 footer {
-    width: 100%;
-    background-color: #777;
-    color: #00FFFF;
+    margin-top: 60px;
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    background: #777;
+    color: #00FFFF;
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
-    <div class="feature">
-        <img src="logicgatherplc.png" alt="LogicGather PLC">
-        <h1>3o|||sheet Automation</h1>
-    </div>
+<!-- HERO -->
 
-    <div class="feature">
-        <div class="text-content">
-            <p>3o|||sheet is a universal software environment for developing applications for Programmable Logic Controllers (PLCs).</p>
-            
-            <ul>
-                <li>Hardware Independence</li>
-                <li>Integrated Development Environment (IDE)</li>
-            </ul>
-        </div>
-        <img src="Complex.png" alt="3o|||sheet">
-    </div>
+<div class="hero">
+    <h1>3o|||sheet Automation</h1>
 
-    <div class="feature">
+    <p><strong>
+    Open-source PLC toolchain and lightweight virtual machine for resource-constrained microcontrollers.
+    </strong></p>
 
-        <video controls autoplay muted loop>
-            <source src="3osheetIDE.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <p>
+    Designed as a small, portable alternative to systems such as CODESYS.
+    Runs on devices with as little as 8 KB RAM and provides deterministic execution,
+    sandboxing, and optional fault-tolerant runtime replication.
+    </p>
 
-    <div class="feature">
-        <h2>3o|||sheet IDE</h2>
-        <div class="text-content">
-            <p>A lightweight, cross-platform IDE built on <strong>OpenJDK</strong>. Runs on single-board computers with minimal resources.</p>
-            <p>Supports <strong>LD</strong>, <strong>FBD</strong>, and <strong>ST</strong> languages plus a <strong>virtual machine instruction set</strong> for advanced logic design.</p>
-            <p>Offers extensive debugging capabilities: developers can modify code in real-time without physically restarting the PLC.</p>
-            
-            <p>The development environment can create executable programs for the PLC in <strong>two modes:</strong></p>
-            
-            <ul>
-                <li><span class="blue-text">Classic PLC mode</span> — cyclic model (OB, OB100). An optimized, economical mode that contains a minimum of additional programs.</li>
-                <li><span class="blue-text">RTOS PLC mode</span> — preemptive multitasking via a 1 ms timer interrupt. In this case, the IDE will additionally install a virtual <strong>real-time 3o|||sheet OS</strong> to execute tasks in parallel.</li>
-            </ul>
-        </div>
-        <img src="3osheetIDE.jpg" alt="3o|||sheet IDE">
-    </div>
-
-    <div class="feature">
-        <h2>3o|||sheet Compiler</h2>
-        <div class="text-content">
-            <p>Is a standalone application that compiles text programs written in <strong>LD</strong>, <strong>FBD</strong>, <strong>ST</strong> and <strong>.3osheet</strong> into executable bytecode for a virtual machine.</p>
-            <p>The compiler can be integrated into third-party development tools (for example, <strong>Visual Studio</strong>, etc.).</p>
-            <p>It includes a complete set of tools for working with complex custom variables, <strong>virtual stack</strong>, and <strong>context management</strong>, enabling the development of sophisticated recursive algorithms and multithreaded tasks <strong>(coroutines)</strong>.</p>
-        </div>
-        <img src="3osheetcompile.png" alt="3o|||sheet Compiler">
-    </div>
-
-    <div class="feature">
-        <h2>3o|||sheet Runtime</h2>
-        <div class="text-content">
-            <p>Register-based Virtual Machine running safely in a sandbox. Works on devices with only <strong>8 KB RAM</strong> and full peripheral access.</p>
-            <ul>
-                <li>Low-memory devices (~8 KB RAM)</li>
-                <li>Safe sandboxed execution</li>
-                <li>Controls GPIO, timers, UART, I²C, SPI, etc.</li>
-                <li>Architecture-independent design</li>
-            </ul>
-        </div>
-        <img src="3osheetRuntime.png" alt="3o|||sheet Runtime">
-    </div>
-
-    <div class="feature">
-        <h2>Memory Map</h2>
-        <div class="text-content">
-            <p>Stack and heap dynamically share a contiguous memory area, allowing flexible memory allocation with minimal overhead.</p>
-        </div>
-        <img src="virtualmemorymap.png" alt="Memory Map">
-    </div>
-
-    <div class="feature">
-        <h2>Multi-VM Architecture:</h2>
-        <div class="text-content">
-            <p>Execute multiple, hardware-isolated runtime environments on a single MCU. Ensures fault containment and enables functional safety.</p>
-        </div>
-        <img src="multitask.png" alt="Memory Map">
-    </div>
-
-
-<div class="feature">
-    <h2>Unique Divergent Architecture</h2>
-    <div class="text-content">
-        <p>The platform incorporates a unique divergent architecture designed for maximum reliability and fault tolerance in safety-critical applications.
-        
-        Divergent Multi-Version Execution (DME) is a redundancy-based fault-tolerance architecture that combines address-space decorrelation with per-instruction full-state hashing. Identical instruction bytes are preserved across replicas, while basic blocks are mapped to distinct virtual addresses. After each instruction, replicas compute incremental architectural state hashes and perform synchronous comparison.
-
-The approach targets safety-critical embedded systems, particularly 32-bit microcontrollers (e.g., ARM Cortex-M class). DME reduces the probability of undetected replica-local faults by structurally decorrelating control flow without altering program semantics.
-        </p>
-    </div>
+    <ul style="list-style:none;padding:0;">
+        <li>✔ IEC 61131-3 languages (LD / FBD / ST)</li>
+        <li>✔ Bytecode VM for small MCUs</li>
+        <li>✔ Deterministic timing</li>
+        <li>✔ Runs without custom hardware</li>
+        <li>✔ Optional fault-tolerant execution (DME)</li>
+    </ul>
 </div>
 
 
-<div class="table-container">
-    <h2>Fault Detection Coverage</h2>
-    <div class="text-content">
-        <p>Comprehensive fault detection across different execution modes.</p>
-    </div>
-    <table id="fault-detection">
-        <thead>
-            <tr>
-                <th>Fault Class</th>
-                <th>Mode 1</th>
-                <th>Mode 2</th>
-                <th>Mode 3</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Program flow errors</td>
-                <td class="detection-yes">✓ YES</td>
-                <td class="detection-yes">✓ YES</td>
-                <td class="detection-yes">✓ YES</td>
-            </tr>
-            <tr>
-                <td>Computation errors</td>
-                <td class="detection-no">✗ NO</td>
-                <td class="detection-yes">✓ YES</td>
-                <td class="detection-yes">✓ YES</td>
-            </tr>
-            <tr>
-                <td>Data corruption</td>
-                <td class="detection-no">✗ NO</td>
-                <td class="detection-no">✗ NO</td>
-                <td class="detection-yes">✓ YES</td>
-            </tr>
-        </tbody>
-    </table>
+<!-- ARCHITECTURE -->
+
+<div class="section">
+<h2>System Architecture</h2>
+
+<p>
+IDE → Compiler → Bytecode → Runtime VM → Microcontroller
+</p>
+
+<p>
+The project consists of three independent parts:
+</p>
+
+<ul>
+<li><strong>IDE</strong> — editing, debugging, deployment</li>
+<li><strong>Compiler</strong> — IEC languages → compact bytecode</li>
+<li><strong>Runtime VM</strong> — sandboxed execution on MCU</li>
+</ul>
 </div>
 
-    <div class="table-container">
-        <h2>LD Instruction Execution Times</h2>
-        <div class="text-content">
-            <p>Measured execution times for boolean and Integer and floating-point operations on different microcontrollers and PLCs.</p>
-        </div>
-        <table id="speed-test">
-            <thead>
-                <tr>
-                    <th>Device</th>
-                    <th>Boolean Operation</th>
-                    <th>Integer / Floating-Point Operation</th>
-                </tr>
-            </thead>
-            <tbody>
 
-                <tr>
-                    <td>STM32G030 64Mhz (<span class="blue-text">3o|||sheet Runtime</span>)</td>
-                    <td>2.1 μs</td>
-                    <td>6.5/24 μs</td>
-                </tr>
-                <tr>
-                    <td>STM32F103 72Mhz (<span class="blue-text">3o|||sheet Runtime</span>)</td>
-                    <td>1.9 μs</td>
-                    <td>4.6/4.6 μs</td>
-                </tr>
-                <tr>
-                    <td>STM32F407 168Mhz (<span class="blue-text">3o|||sheet Runtime</span>)</td>
-                    <td>1.2 μs</td>
-                    <td>2.8/2.8 μs</td>
-                </tr>
-                <tr>
-                    <td>CH32V203 (144Mhz Mode) (<span class="blue-text">3o|||sheet Runtime</span>)</td>
-                    <td>0.8 μs</td>
-                    <td>3.1/18.3 μs</td>
-                </tr>
-                <tr>
-                    <td>CH32V307 144Mhz (<span class="blue-text">3o|||sheet Runtime</span>)</td>
-                    <td>0.8 μs</td>
-                    <td>5.5/5.5 μs</td>
-                </tr>
+<!-- IDE -->
 
-                <tr>
-                    <td>Rockwell Micro810</td>
-                    <td>2.5 μs</td>
-                    <td>8.6/ - μs</td>
-                </tr>
-                <tr>
-                    <td>Rockwell Compact GuardLogix 5380 1Ghz</td>
-                    <td>~0.01–0.05 μs</td>
-                    <td>~0.01–0.08 μs</td>
-                </tr>
-                <tr>
-                    <td>Siemens S7-1200</td>
-                    <td>~0.08ns</td>
-                    <td>~2.3μs/ 4</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="section">
+<h2>IDE</h2>
 
+<p>
+Cross-platform development environment built on OpenJDK.
+Runs on low-power PCs and single-board computers.
+</p>
+
+<ul>
+<li>LD, FBD, ST editors</li>
+<li>Online debugging</li>
+<li>Live variable inspection</li>
+<li>Program updates without PLC restart</li>
+<li>Classic cyclic mode or RTOS-style preemptive mode (1 ms tick)</li>
+</ul>
+
+<video controls muted loop>
+    <source src="3osheetIDE.mp4" type="video/mp4">
+</video>
 </div>
+
+
+<!-- COMPILER -->
+
+<div class="section">
+<h2>Compiler</h2>
+
+<ul>
+<li>Compiles LD / FBD / ST → compact bytecode</li>
+<li>Standalone CLI tool</li>
+<li>Integrates with external IDEs (Visual Studio, scripts, CI)</li>
+<li>Virtual stack + context switching</li>
+<li>Supports recursion and coroutines</li>
+</ul>
+
+<img src="3osheetcompile.png">
+</div>
+
+
+<!-- RUNTIME -->
+
+<div class="section">
+<h2>Runtime Virtual Machine</h2>
+
+<p>
+Register-based bytecode interpreter optimized for very small microcontrollers.
+Designed for deterministic behavior and minimal memory usage.
+</p>
+
+<ul>
+<li>Works on ~8 KB RAM devices</li>
+<li>Sandboxed execution</li>
+<li>Direct GPIO, UART, SPI, I²C, timer access</li>
+<li>No dynamic allocation required</li>
+<li>Architecture-independent (ARM Cortex-M, RISC-V, etc.)</li>
+<li>Multiple isolated VMs on one MCU</li>
+</ul>
+
+<img src="3osheetRuntime.png">
+</div>
+
+
+<!-- DME -->
+
+<div class="section">
+<h2>Fault-Tolerant Execution (DME)</h2>
+
+<p>
+Divergent Multi-Version Execution (DME) is an optional runtime mode for safety-critical systems.
+It runs multiple replicas of the same program with decorrelated address layouts and compares
+their architectural state after every instruction.
+</p>
+
+<ul>
+<li>Address-space decorrelation between replicas</li>
+<li>Per-instruction state hashing</li>
+<li>Single-instruction detection latency</li>
+<li>Deterministic overhead</li>
+</ul>
+
+<p>
+Detects replica-divergent faults such as:
+</p>
+
+<ul>
+<li>Control-flow corruption</li>
+<li>Computation errors</li>
+<li>Memory corruption</li>
+</ul>
+
+<p>
+Does not protect against fully correlated common-mode faults
+(shared clock/power/systematic hardware bugs).
+</p>
+
+<p>
+Research paper: Zenodo DOI
+</p>
+</div>
+
+
+<!-- PERFORMANCE -->
+
+<div class="section">
+<h2>Execution Performance on Microcontrollers</h2>
+
+<p>
+Measured instruction execution time of LD operations on real hardware.
+No custom hardware is required.
+</p>
+
+<table>
+<tr>
+<th>Device</th>
+<th>Boolean</th>
+<th>Integer / Float</th>
+</tr>
+
+<tr>
+<td>STM32G030 64 MHz</td>
+<td>2.1 μs</td>
+<td>6.5 / 24 μs</td>
+</tr>
+
+<tr>
+<td>STM32F103 72 MHz</td>
+<td>1.9 μs</td>
+<td>4.6 / 4.6 μs</td>
+</tr>
+
+<tr>
+<td>STM32F407 168 MHz</td>
+<td>1.2 μs</td>
+<td>2.8 / 2.8 μs</td>
+</tr>
+
+<tr>
+<td>CH32V203 144 MHz</td>
+<td>0.8 μs</td>
+<td>3.1 / 18.3 μs</td>
+</tr>
+
+<tr>
+<td>CH32V307 144 MHz</td>
+<td>0.8 μs</td>
+<td>5.5 / 5.5 μs</td>
+</tr>
+</table>
+</div>
+
 
 <footer>
-    zoshytlogic@gmail.com
+zoshytlogic@gmail.com
 </footer>
 
+</div>
 </body>
 </html>
