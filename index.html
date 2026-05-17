@@ -293,73 +293,74 @@ The platform incorporates a unique divergent architecture designed for maximum r
 
 
 
-<div class="table-container" style="font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 12px; background: #fff;">
-    <h2 style="color: #1e293b; margin-top: 0; margin-bottom: 8px; font-size: 24px;">Fault Detection Coverage</h2>
-    <p style="color: #64748b; margin-bottom: 24px; font-size: 15px;">Comparative analysis of fault detection guarantees between traditional redundancy and DME based on the fault correlation model.</p>
+<div class="marketing-container" style="font-family: system-ui, -apple-system, sans-serif; max-width: 950px; margin: 30px auto; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-radius: 16px; background: #fff; border: 1px solid #e2e8f0;">
+    <h2 style="color: #0f172a; margin-top: 0; margin-bottom: 6px; font-size: 26px; font-weight: 700; text-align: center;">Why Choose DME Over Traditional Lockstep / TMR?</h2>
+    <p style="color: #64748b; margin-bottom: 32px; font-size: 16px; text-align: center;">Unique protection mechanisms of Divergent Multi-Version Execution architecture that standard redundancy schemes cannot provide.</p>
     
     <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
             <thead>
                 <tr style="border-bottom: 2px solid #e2e8f0; background-color: #f8fafc;">
-                    <th style="padding: 14px; color: #ffffff; font-weight: 600;">Fault Scenario / Model</th>
-                    <th style="padding: 14px; color: #ffffff; font-weight: 600; text-align: center; width: 25%;">Classical Lockstep / TMR</th>
-                    <th style="padding: 14px; color: #ffffff; font-weight: 600; text-align: center; width: 25%;">DME (Divergent Multi-Version)</th>
+                    <th style="padding: 16px; color: #334155; font-weight: 600; width: 35%;">Threat or System Requirement</th>
+                    <th style="padding: 16px; color: #64748b; font-weight: 600; text-align: center; width: 25%;">Standard Lockstep / TMR</th>
+                    <th style="padding: 16px; color: #0284c7; font-weight: 600; text-align: center; width: 40%; background-color: #f0f9ff; border-top-left-radius: 8px; border-top-right-radius: 8px;">DME Superiority ✨</th>
                 </tr>
             </thead>
             <tbody>
-                <tr style="border-bottom: 1px solid #edf2f7;">
-                    <td style="padding: 14px; font-weight: 500; color: #1e293b;">
-                        <strong>Fully Correlated PC Faults</strong><br>
-                        <span style="font-size: 12px; color: #64748b; font-weight: normal;">Identical perturbation across replicas <span style="font-family: monospace;">|ΔPC| ≥ l/N</span></span>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                    <td style="padding: 18px 16px; font-weight: 600; color: #1e293b;">
+                        Highly Correlated Faults<br>
+                        <span style="font-size: 12px; color: #64748b; font-weight: normal;">(EM pulses, radiation, voltage glitches)</span>
                     </td>
-                    <td style="padding: 14px; text-align: center; background-color: #fef2f2; color: #991b1b; font-weight: 600;">
-                        <span style="display: inline-block; padding: 4px 8px; border-radius: 6px; background: #fee2e2;">✗ NO DETECT</span><br>
-                        <span style="font-size: 11px; color: #b91c1c; font-weight: normal; display: block; margin-top: 4px;">Silent Data Corruption</span>
+                    <td style="padding: 18px 16px; text-align: center; color: #64748b; background-color: #fafafa;">
+                        <span style="color: #dc2626; font-weight: 600;">DEFENSELESS</span><br>
+                        <span style="font-size: 11px; color: #94a3b8; display: block; margin-top: 4px;">A single perturbation shifts all replicas identically. The system accepts the failure as correct.</span>
                     </td>
-                    <td style="padding: 14px; text-align: center; background-color: #f0fdf4; color: #166534; font-weight: 600;">
-                        <span style="display: inline-block; padding: 4px 8px; border-radius: 6px; background: #dcfce7;">✓ DETERMINISTIC</span><br>
-                        <span style="font-size: 11px; color: #15803d; font-weight: normal; display: block; margin-top: 4px;">Within 1 instruction slice</span>
-                    </td>
-                </tr>
-                <tr style="border-bottom: 1px solid #edf2f7;">
-                    <td style="padding: 14px; font-weight: 500; color: #1e293b;">
-                        <strong>Small Fully Correlated PC Faults</strong><br>
-                        <span style="font-size: 12px; color: #64748b; font-weight: normal;">Identical perturbation within alignment window <span style="font-family: monospace;">|ΔPC| &lt; l/N</span></span>
-                    </td>
-                    <td style="padding: 14px; text-align: center; background-color: #fef2f2; color: #991b1b; font-weight: 600;">
-                        <span style="display: inline-block; padding: 4px 8px; border-radius: 6px; background: #fee2e2;">✗ NO DETECT</span>
-                    </td>
-                    <td style="padding: 14px; text-align: center; background-color: #fff9db; color: #92400e; font-weight: 600;">
-                        <span style="display: inline-block; padding: 4px 8px; border-radius: 6px; background: #fef3c7;">⚠️ NOT GUARANTEED</span><br>
-                        <span style="font-size: 11px; color: #b45309; font-weight: normal; display: block; margin-top: 4px;">Alignment window risk</span>
+                    <td style="padding: 18px 16px; text-align: center; background-color: #f0f9ff; color: #0369a1; font-weight: 600;">
+                        <span style="display: inline-block; padding: 4px 10px; border-radius: 20px; background: #bae6fd; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Absolute Protection</span><br>
+                        <span style="font-size: 12px; color: #0c4a6e; font-weight: normal; display: block; margin-top: 6px;">Driven by <strong>complementary branch signs and NOP-decorrelation</strong>, identical faults force replicas onto divergent semantic paths. Instant detection!</span>
                     </td>
                 </tr>
-                <tr style="border-bottom: 1px solid #edf2f7;">
-                    <td style="padding: 14px; font-weight: 500; color: #1e293b;">
-                        <strong>Differing Perturbations / Single-Replica</strong><br>
-                        <span style="font-size: 12px; color: #64748b; font-weight: normal;">Asymmetric PC faults or hardware faults in 1 replica</span>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                    <td style="padding: 18px 16px; font-weight: 600; color: #1e293b;">
+                        Control-Flow Hijacking<br>
+                        <span style="font-size: 12px; color: #64748b; font-weight: normal;">(Return address corruption, buffer overflows)</span>
                     </td>
-                    <td style="padding: 14px; text-align: center; background-color: #f0fdf4; color: #166534; font-weight: 600;">
-                        <span style="display: inline-block; padding: 4px 8px; border-radius: 6px; background: #dcfce7;">✓ DETERMINISTIC</span><br>
-                        <span style="font-size: 11px; color: #15803d; font-weight: normal; display: block; margin-top: 4px;">Immediate (PC mismatch)</span>
+                    <td style="padding: 18px 16px; text-align: center; color: #64748b; background-color: #fafafa;">
+                        <span style="color: #dc2626; font-weight: 600;">BLIND SPOT</span><br>
+                        <span style="font-size: 11px; color: #94a3b8; display: block; margin-top: 4px;">If the corrupted address falls within an allowed region, all replicas transition simultaneously.</span>
                     </td>
-                    <td style="padding: 14px; text-align: center; background-color: #f0fdf4; color: #166534; font-weight: 600;">
-                        <span style="display: inline-block; padding: 4px 8px; border-radius: 6px; background: #dcfce7;">✓ PROBABILISTIC</span><br>
-                        <span style="font-size: 11px; color: #15803d; font-weight: normal; display: block; margin-top: 4px;">Exponential decay (γ·ε)<sup>k</sup></span>
+                    <td style="padding: 18px 16px; text-align: center; background-color: #f0f9ff; color: #0369a1; font-weight: 600;">
+                        <span style="display: inline-block; padding: 4px 10px; border-radius: 20px; background: #bae6fd; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Zero-Latency Intercept</span><br>
+                        <span style="font-size: 12px; color: #0c4a6e; font-weight: normal; display: block; margin-top: 6px;">Our <strong>Address Non-Aliasing</strong> layer halts execution the exact millisecond cross-replica addresses collapse, long before any bad data spreads.</span>
                     </td>
                 </tr>
-                <tr style="border-bottom: 1px solid #edf2f7;">
-                    <td style="padding: 14px; font-weight: 500; color: #1e293b;">
-                        <strong>Identical Pointer / Data Corruption</strong><br>
-                        <span style="font-size: 12px; color: #64748b; font-weight: normal;">Corrupted return addresses, null pointers, buffer overflows</span>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                    <td style="padding: 18px 16px; font-weight: 600; color: #1e293b;">
+                        Software Bug Resilience<br>
+                        <span style="font-size: 12px; color: #64748b; font-weight: normal;">(Null pointer dereference, "wild" pointers)</span>
                     </td>
-                    <td style="padding: 14px; text-align: center; background-color: #fef2f2; color: #991b1b; font-weight: 600;">
-                        <span style="display: inline-block; padding: 4px 8px; border-radius: 6px; background: #fee2e2;">✗ NO DETECT</span><br>
-                        <span style="font-size: 11px; color: #b91c1c; font-weight: normal; display: block; margin-top: 4px;">If address is within legal region</span>
+                    <td style="padding: 18px 16px; text-align: center; color: #64748b; background-color: #fafafa;">
+                        <span style="color: #dc2626; font-weight: 600;">UNSUPPORTED</span><br>
+                        <span style="font-size: 11px; color: #94a3b8; display: block; margin-top: 4px;">Logical software bugs replicate across identical architectures without triggering flags.</span>
                     </td>
-                    <td style="padding: 14px; text-align: center; background-color: #f0fdf4; color: #166534; font-weight: 600;">
-                        <span style="display: inline-block; padding: 4px 8px; border-radius: 6px; background: #dcfce7;">✓ DETERMINISTIC</span><br>
-                        <span style="font-size: 11px; color: #15803d; font-weight: normal; display: block; margin-top: 4px;">Zero-latency Address Collapse</span>
+                    <td style="padding: 18px 16px; text-align: center; background-color: #f0f9ff; color: #0369a1; font-weight: 600;">
+                        <span style="display: inline-block; padding: 4px 10px; border-radius: 20px; background: #bae6fd; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Runtime Semantic Validation</span><br>
+                        <span style="font-size: 12px; color: #0c4a6e; font-weight: normal; display: block; margin-top: 6px;">Accidental value-as-pointer assignments trigger immediate <strong>address-space collapse</strong> detection. DME acts as a live validator for pointer semantics.</span>
+                    </td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                    <td style="padding: 18px 16px; font-weight: 600; color: #1e293b;">
+                        Hardware Costs & Constraints<br>
+                        <span style="font-size: 12px; color: #64748b; font-weight: normal;">(Requirements for high-end cores and MMUs)</span>
+                    </td>
+                    <td style="padding: 18px 16px; text-align: center; color: #64748b; background-color: #fafafa;">
+                        <span style="color: #b45309; font-weight: 600;">HIGH DEPEDENCY</span><br>
+                        <span style="font-size: 11px; color: #94a3b8; display: block; margin-top: 4px;">Demands specialized, expensive multi-core chips with heavy silicon overhead.</span>
+                    </td>
+                    <td style="padding: 18px 16px; text-align: center; background-color: #f0f9ff; color: #0369a1; font-weight: 600;">
+                        <span style="display: inline-block; padding: 4px 10px; border-radius: 20px; background: #bae6fd; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">Hardware Agnostic</span><br>
+                        <span style="font-size: 12px; color: #0c4a6e; font-weight: normal; display: block; margin-top: 6px;">Designed natively for bare-metal, low-cost 32-bit controllers (e.g., ARM Cortex-M class) <strong>without virtual memory (MMU)</strong>. Entirely managed at compile time.</span>
                     </td>
                 </tr>
             </tbody>
