@@ -1,3 +1,6 @@
+Я убрал весь русский текст и перевел его на английский. Вот исправленный код:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +27,7 @@ body {
     padding: 0;
     color: #333;
     line-height: 1.6;
-    background: #f9fafc; /* легкий фон для контраста */
+    background: #f9fafc;
 }
 
 h1, h2, h3 {
@@ -34,11 +37,10 @@ h1 { margin-top: 40px; color: #5555aa; }
 h2 { margin-top: 30px; color: #444; }
 h3 { margin-top: 20px; color: #222; }
 
-/* ОСНОВНОЙ КОНТЕЙНЕР — ограничивает ширину и центрирует все блоки */
 .container {
     max-width: 1080px;
     margin: 0 auto;
-    padding: 20px 30px; /* увеличенные отступы по бокам */
+    padding: 20px 30px;
     background: #ffffff;
     box-shadow: 0 0 30px rgba(0,0,0,0.05);
     border-radius: 8px;
@@ -55,7 +57,6 @@ h3 { margin-top: 20px; color: #222; }
     margin-bottom: 16px;
 }
 
-/* Левый текст внутри блоков */
 .text-content {
     text-align: left;
     margin: 20px 0;
@@ -116,7 +117,6 @@ table#speed-test tbody tr:nth-child(5) {
     font-weight: bold;
 }
 
-/* Стили для таблицы обнаружения ошибок */
 table#fault-detection {
     margin-top: 20px;
     margin-bottom: 30px;
@@ -152,7 +152,6 @@ table#fault-detection td:first-child {
     font-weight: bold;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
@@ -177,7 +176,6 @@ footer {
     margin-top: 40px;
 }
 
-/* Стиль для маркетингового блока — теперь он тоже в рамках контейнера */
 .marketing-container {
     font-family: system-ui, -apple-system, sans-serif;
     max-width: 100%;
@@ -285,7 +283,6 @@ footer {
         </div>
     </div>
 
-    <!-- Маркетинговый блок — теперь внутри container, с отступами -->
     <div class="marketing-container">
         <h2 style="color: #0f172a; margin-top: 0; margin-bottom: 6px; font-size: 26px; font-weight: 700; text-align: center;">Why Choose DME Over Traditional Lockstep / TMR?</h2>
         <p style="color: #64748b; margin-bottom: 32px; font-size: 16px; text-align: center;">Unique protection mechanisms of Divergent Multi-Version Execution architecture that standard redundancy schemes cannot provide.</p>
@@ -419,29 +416,28 @@ footer {
         </table>
     </div>
 
-    <!-- Исправленный блок: Гибридный ПЛК с программируемым пультом -->
+    <!-- Hybrid PLC with Programmable Operator Panel -->
     <div class="feature">
         <div class="text-content">
-            <h2 style="text-align: center;">Гибридный ПЛК с программируемым пультом</h2>
+            <h2 style="text-align: center;">Hybrid PLC with Programmable Operator Panel</h2>
             <p>
-                Это уникальное решение, которое объединяет в себе полноценный программируемый логический контроллер (ПЛК) и интеллектуальный пульт оператора в одном устройстве. Такая архитектура позволяет не только управлять технологическим процессом, но и визуализировать данные, а также быстро вносить изменения в логику работы прямо с пульта, без использования внешнего компьютера.
+                This is a unique solution that combines a full-featured Programmable Logic Controller (PLC) and an intelligent operator panel into a single device. This architecture allows not only process control but also data visualization and on-the-fly logic modifications directly from the panel, without the need for an external computer.
             </p>
             <ul>
-                <li><strong>Встроенный контроллер:</strong> Выполняет все функции классического ПЛК: сбор данных с датчиков, обработка дискретных и аналоговых сигналов, управление исполнительными механизмами.</li>
-                <li><strong>Программируемый пульт:</strong> Оснащен набором физических кнопок, переключателей и сенсорным (или текстовым) дисплеем, конфигурация которых напрямую связана с переменными контроллера.</li>
-                <li><strong>Единая среда разработки:</strong> Настройка как логики управления, так и поведения пульта (раскладка кнопок, отображаемые данные) выполняется в единой среде <strong>3o|||sheet IDE</strong>.</li>
-                <li><strong>Полная синхронизация:</strong> Изменение переменных в программе мгновенно отражается на пульте, а нажатие физической кнопки или переключателя немедленно обрабатывается контроллером с минимальной задержкой.</li>
-                <li><strong>Применение:</strong> Идеально подходит для систем, где требуется оперативный контроль и вмешательство оператора: станки, упаковочные линии, манипуляторы, тестовые стенды.</li>
+                <li><strong>Built-in Controller:</strong> Performs all classic PLC functions: data acquisition from sensors, discrete and analog signal processing, actuator control.</li>
+                <li><strong>Programmable Panel:</strong> Equipped with physical buttons, switches, and a touchscreen (or text) display, all directly mapped to controller variables.</li>
+                <li><strong>Unified Development Environment:</strong> Both control logic and panel behavior (button layout, displayed data) are configured within the <strong>3o|||sheet IDE</strong>.</li>
+                <li><strong>Full Synchronization:</strong> Changes to program variables are instantly reflected on the panel, while button presses or switch toggles are processed by the controller with minimal latency.</li>
+                <li><strong>Applications:</strong> Ideal for systems requiring operator intervention: machine tools, packaging lines, manipulators, test benches.</li>
             </ul>
             <p>
-                Такая интеграция существенно снижает затраты на оборудование (не нужен отдельный HMI-панель), упрощает монтаж и сокращает время разработки, так как отпадает необходимость настраивать протоколы обмена между ПЛК и пультом.
+                This integration significantly reduces hardware costs (no separate HMI panel needed), simplifies installation, and shortens development time by eliminating the need to configure communication protocols between the PLC and the panel.
             </p>
         </div>
-        <!-- Здесь можно добавить изображение, если оно есть -->
-        <!-- <img src="hybrid_plc_hmi.jpg" alt="Гибридный ПЛК с пультом"> -->
+        <!-- <img src="hybrid_plc_hmi.jpg" alt="Hybrid PLC with Operator Panel"> -->
     </div>
 
-    <!-- Блок Universal Industrial Automation Platform — теперь тоже внутри container -->
+    <!-- Universal Industrial Automation Platform -->
     <div class="feature">
         <div class="text-content">
             <p align="center">
@@ -488,7 +484,7 @@ footer {
         </div>
     </div>
 
-</div> <!-- конец container -->
+</div>
 
 <footer>
     zoshytlogic@gmail.com
@@ -498,3 +494,4 @@ footer {
 
 </body>
 </html>
+```
