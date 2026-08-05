@@ -1,6 +1,3 @@
-Я убрал весь русский текст и перевел его на английский. Вот исправленный код:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -186,6 +183,19 @@ footer {
     background: #fff;
     border: 1px solid #e2e8f0;
     box-sizing: border-box;
+}
+
+/* Highlight box for harsh environments */
+.highlight-box {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.highlight-box strong {
+    color: #92400e;
 }
 </style>
 </head>
@@ -416,20 +426,40 @@ footer {
         </table>
     </div>
 
-    <!-- Hybrid PLC with Programmable Operator Panel -->
+    <!-- Hybrid PLC with Programmable Operator Panel - Enhanced for Harsh Environments -->
     <div class="feature">
         <div class="text-content">
             <h2 style="text-align: center;">Hybrid PLC with Programmable Operator Panel</h2>
+            
+            <div class="highlight-box">
+                <strong>🔧 Built for Harsh Environments:</strong> Unlike fragile touchscreen HMI panels that fail in dusty, dirty, or high-vibration conditions, our hybrid PLC uses <strong>physical buttons and switches</strong> — reliable even when operators wear thick gloves, in high humidity, or in explosive atmospheres (mines, chemical plants, foundries).
+            </div>
+            
             <p>
                 This is a unique solution that combines a full-featured Programmable Logic Controller (PLC) and an intelligent operator panel into a single device. This architecture allows not only process control but also data visualization and on-the-fly logic modifications directly from the panel, without the need for an external computer.
             </p>
             <ul>
                 <li><strong>Built-in Controller:</strong> Performs all classic PLC functions: data acquisition from sensors, discrete and analog signal processing, actuator control.</li>
-                <li><strong>Programmable Panel:</strong> Equipped with physical buttons, switches, and a touchscreen (or text) display, all directly mapped to controller variables.</li>
+                <li><strong>Programmable Panel:</strong> Equipped with physical buttons, switches, and a ruggedized display (optional), all directly mapped to controller variables. No capacitive touch — immune to water, dust, and gloved hands.</li>
                 <li><strong>Unified Development Environment:</strong> Both control logic and panel behavior (button layout, displayed data) are configured within the <strong>3o|||sheet IDE</strong>.</li>
                 <li><strong>Full Synchronization:</strong> Changes to program variables are instantly reflected on the panel, while button presses or switch toggles are processed by the controller with minimal latency.</li>
-                <li><strong>Applications:</strong> Ideal for systems requiring operator intervention: machine tools, packaging lines, manipulators, test benches.</li>
             </ul>
+
+            <div class="highlight-box" style="background: #dbeafe; border-left-color: #2563eb;">
+                <strong>⛏️ Ideal for Mining & Heavy Industry:</strong>
+                <ul style="margin-top: 8px; padding-left: 24px;">
+                    <li><strong>Mines & Tunnels:</strong> Physical buttons work reliably with thick gloves, in high humidity, and with coal dust.</li>
+                    <li><strong>Foundries & Steel Mills:</strong> Resistant to extreme heat, metal dust, and vibration — where touchscreens fail within weeks.</li>
+                    <li><strong>Chemical & Fertilizer Plants:</strong> Explosion-proof versions available with sealed mechanical switches.</li>
+                    <li><strong>Oil & Gas:</strong> Ruggedized design withstands corrosive atmospheres and outdoor conditions.</li>
+                    <li><strong>Heavy Machinery:</strong> Excavators, crushers, conveyors — operator panels that survive the harshest jobsites.</li>
+                </ul>
+            </div>
+            
+            <p>
+                <strong>Why physical controls matter:</strong> Capacitive touchscreens are unreliable in mining, metallurgy, and heavy industry. Dust, grease, water droplets, and thick protective gloves render them useless. Our hybrid PLC replaces fragile touch interfaces with <strong>industrial-grade mechanical buttons and rotary switches</strong> — proven technology that works in the toughest conditions on Earth.
+            </p>
+            
             <p>
                 This integration significantly reduces hardware costs (no separate HMI panel needed), simplifies installation, and shortens development time by eliminating the need to configure communication protocols between the PLC and the panel.
             </p>
@@ -494,4 +524,3 @@ footer {
 
 </body>
 </html>
-```
