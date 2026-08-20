@@ -435,6 +435,104 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+<div class="feature">
+    <h2>Programmable Machine Controller (PMC)</h2>
+    <div class="text-content">
+
+         <p align="center">
+            <img src="PMC.jpg" alt="Programmable Machine Controller Platform" width="100%">
+        </p>
+        <p>The Programmable Machine Controller (PMC) is a hardware-software ecosystem powered by 3o|||sheet. It integrates the industrial controller, I/O modules, and operator controls (buttons, joysticks, encoders, and touchscreens) into a single execution layer, removing the need for separate PLC hardware and HMI panels that communicate over slow communication protocols.</p>
+
+        <h3>Unified Core Architecture & Single Interface</h3>
+        <p>Traditional industrial automation separates control logic from the user interface. The PMC utilizes a Unified Core architecture where a single computing core executes machine logic and directly drives all physical and touchscreen interface elements via a unified connection interface on a DIN rail or latch system.</p>
+        <ul>
+            <li><strong>All-in-One CPU Module</strong> — A single controller handles standard industrial I/O processing, physical operator inputs, and touchscreen coordinates simultaneously.</li>
+            <li><strong>Zero-Protocol Mapping</strong> — Hardware inputs, analog joysticks, digital encoders, and virtual touchscreen buttons map directly to internal variables, reducing communication latency and configuration overhead.</li>
+        </ul>
+
+                <div class="feature">
+            <video controls autoplay muted loop>
+                <source src="https://zoshytlogic.github.io/UniversalProcessor.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <h3>Inter-Module Interface & Bus Architecture (36–72 IO + CAN)</h3>
+        <p>Within the PMC ecosystem, the connection between the CPU module and peripheral blocks utilizes a hybrid interface (socket-to-plug connector) consisting of two independent data-sharing layers:</p>
+        <ol>
+            <li><strong>Parallel Direct I/O Bus (36–72 IO Lines)</strong> — A dedicated physical layer designed for direct hardware-level connections.</li>
+            <li><strong>Serial CAN Bus</strong> — A communication layer dedicated to module initialization, dispatching, and standard-priority data transmission.</li>
+        </ol>
+
+        <h3>Dynamic Resource Allocation (Zero-Protocol Mapping)</h3>
+        <p>When a physical operator panel module docks with the shared bus, the interaction follows a two-stage hybrid handshake:</p>
+        <ul>
+            <li><strong>Registration & Interrogation (CAN Layer)</strong> — The connected module broadcasts an initialization packet to the CPU via the CAN bus. This packet contains the module’s digital profile, specifying the type and count of its onboard controls (buttons, sliders, encoders, joysticks). The CPU analyzes the current resource map and transmits back assigned line numbers allocated from the available pool.</li>
+            <li><strong>Direct Hardware Commutation (Zero-Protocol Layer)</strong> — Upon receiving its line assignments, the module's hardware routes its physical components directly onto the designated lines of the bus. Signal transmission then bypasses traditional software protocol stacks entirely via Zero-Protocol Mapping, connecting physical controls directly to internal controller variables at the hardware level.</li>
+        </ul>
+
+        <h3>Data Prioritization & System Scaling</h3>
+        <p>The platform segregates data streams based on their latency tolerance and priority:</p>
+        <ul>
+            <li><strong>High-Priority Elements (Zero-Protocol)</strong> — Reserved exclusively for physical operator interface controls (buttons, joysticks, encoders) that require immediate system response. Direct hardware routing over the I/O lines minimizes delays caused by packet packaging, network arbitration, or software stack processing.</li>
+            <li><strong>Standard-Priority Expansion (CAN Protocol)</strong> — Once all direct I/O lines are fully allocated, any further system expansion shifts to the CAN interface.</li>
+        </ul>
+
+        <h3>Core Architectural Advantages</h3>
+        <ul>
+            <li><strong>Low Communication Latency</strong> — Achieved for critical human-machine interface elements by keeping them on the hardware direct-wire layer.</li>
+            <li><strong>Dynamic Plug-and-Play</strong> — Operator panels can be hot-swapped or rearranged on the fly; the system automatically re-routes physical lines within the bus.</li>
+            <li><strong>CPU Resource Protection</strong> — High-density, high-throughput standard I/O traffic is isolated within the CAN channel, preventing it from consuming fast direct-response lines.</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
 <!-- Programmable Machine Controller (PMC) Platform -->
 <div class="feature">
     <div class="text-content">
