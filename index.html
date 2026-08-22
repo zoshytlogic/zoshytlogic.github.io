@@ -426,196 +426,80 @@ footer {
         </table>
     </div>
 
-  
+    <!-- ============================================================ -->
+    <!--  НОВЫЙ РАЗДЕЛ PMC  (заменён на спецификацию GARM)             -->
+    <!-- ============================================================ -->
+    <div class="feature">
+        <h1 align="center">Programmable Machine Controller (PMC)</h1>
+        <h2 align="center">GARM Architectural Paradigm</h2>
+        <div class="text-content">
 
+            <p align="center">
+                <img src="PMC.jpg" alt="Programmable Machine Controller Platform" width="100%">
+            </p>
 
+            <h3>1. System Uniqueness &amp; Paradigm Shift</h3>
+            <p>The Programmable Machine Controller (PMC) represents an unprecedented, industry-first hardware-software ecosystem that completely redefines traditional industrial automation interfaces. Traditional setups strictly segregate machine control logic (the PLC) from operator terminal interfaces (HMI panels) and standard peripheral I/O cards, forcing them to exchange data over slow, cyclic network communication layers. This separation causes significant software latency, data packet arbitration, and deterministic processing jitter.</p>
+            <p>The PMC breaks this paradigm through its proprietary Unified Core Architecture. It seamlessly merges the industrial computing core, standard field expansion I/O, and physical high-ergonomics operator controls (buttons, analog joysticks, rotary encoders, and switches) into a single, unified execution and mechanical layer on a standard DIN rail. By eliminating intermediate communication barriers, the controller achieves complete architectural fusion.</p>
 
+            <h3>2. The Core Mechanics of the GARM Paradigm</h3>
+            <p>To coordinate execution-critical physical controls alongside standard digital data traffic on a shared interface, the platform incorporates the GARM structural principle. GARM explicitly splits real-time control mechanics into two autonomous, parallel operational planes that interact asynchronously without blocking one another:</p>
+            <ul>
+                <li><strong>The Physical Execution Plane:</strong> When an operator triggers a hardware input component (e.g., a physical button or joystick), the action immediately directs a raw electrical potential down a dedicated line within the physical fabric. This signal routes straight to the central controller processor core or actuator inhibitor circuit, entirely bypassing software protocol stacks, packetization overhead, and buffering queues.</li>
+                <li><strong>The Digital Verification Plane:</strong> Concurrently and independently, a parallel digital protocol channel packages the event information into a standard communication packet. This digital track handles capability logging, resource mapping, global diagnostics, and asynchronous software status confirmation post-factum within a deterministic 100 to 400 microseconds heartbeat interval.</li>
+            </ul>
 
+            <h3>3. Hybrid Inter-Module Interface &amp; Zero-Protocol Mapping</h3>
+            <p>The unified physical backbone comprises a specialized shared signal fabric containing a fixed pass-through bundle of 36 to 72 dedicated raw conductors alongside an independent digital protocol line. When an ergonomic operator block or standard high-density I/O module docks onto the common rail system, it initiates an automated Zero-Protocol Mapping handshake:</p>
+            <ol>
+                <li><strong>Discovery &amp; Interrogation:</strong> The newly attached hardware component transmits its digital profile packet through the digital plane to the CPU. This profile explicitly defines its exact operational hardware layout (e.g., specific counts of push-buttons, rotary dials, or analog joysticks).</li>
+                <li><strong>Dynamic Commutation:</strong> The central processor analyzes its current physical resource grid, isolates free lines from the 36-72 hardware pool, and sends back an allocation map. The module instantly reconfigures its internal solid-state switching matrix to map the physical controls directly onto the designated lines of the shared hardware bus.</li>
+                <li><strong>IDE Variable Synchronization:</strong> Within the unified 3o|||sheet engineering environment, all physical and touchscreen interface elements map directly to abstract logical identifiers and internal controller variables. The hardware level synchronization entirely avoids manual network address allocation, variable linking, or packet decoding blocks inside the controller application software.</li>
+            </ol>
 
+            <h3>4. Runtime Criticality Tiers &amp; Resource Allocation</h3>
+            <p>To safeguard system stability, optimize conductor utilization, and enforce deterministic timing bounds, the PMC system strictly classifies all incoming runtime signals into three dedicated architectural tiers:</p>
 
+            <div style="overflow-x: auto; margin: 20px 0;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; background: #fff;">
+                    <thead>
+                        <tr style="background-color: #5555aa; color: white;">
+                            <th style="padding: 12px 16px; border: 1px solid #ccc;">Execution Tier</th>
+                            <th style="padding: 12px 16px; border: 1px solid #ccc;">Physical Bus Routing</th>
+                            <th style="padding: 12px 16px; border: 1px solid #ccc;">Verification Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 12px 16px; border: 1px solid #ccc; font-weight: bold;">Critical Execution Tier<br><span style="font-weight: normal; font-size: 12px; color: #555;">(e.g., E-Stops, Safety Interventions)</span></td>
+                            <td style="padding: 12px 16px; border: 1px solid #ccc;">Direct hardware potential matrix via the 36-72 physical conductor lines.</td>
+                            <td style="padding: 12px 16px; border: 1px solid #ccc;">Asynchronous 10-100 ms status heartbeat over digital channel for post-factum logging.</td>
+                        </tr>
+                        <tr style="background-color: #f9fafc;">
+                            <td style="padding: 12px 16px; border: 1px solid #ccc; font-weight: bold;">Important Execution Tier<br><span style="font-weight: normal; font-size: 12px; color: #555;">(e.g., Operational Joysticks, Dials)</span></td>
+                            <td style="padding: 12px 16px; border: 1px solid #ccc;">Direct hardware potential routing straight into core CPU terminal registers.</td>
+                            <td style="padding: 12px 16px; border: 1px solid #ccc;">Processing status feedback loop returned via digital channel within execution scan.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px 16px; border: 1px solid #ccc; font-weight: bold;">Ordinary Execution Tier<br><span style="font-weight: normal; font-size: 12px; color: #555;">(e.g., Thermocouples, Backlights)</span></td>
+                            <td style="padding: 12px 16px; border: 1px solid #ccc;">Exclusively packetized and transmitted via serial digital bus; consumes 0 wire resources.</td>
+                            <td style="padding: 12px 16px; border: 1px solid #ccc;">Fully encapsulated synchronous or asynchronous communication protocol transactions.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
+        </div> <!-- end .text-content -->
+    </div> <!-- end .feature PMC -->
+    <!-- ============================================================ -->
 
+    <footer>
+        zoshytlogic@gmail.com
+        <br>
+        dme.verify@gmail.com
+    </footer>
 
-
-
-
-
-
-
-
-
-
-
-<div class="feature">
-     <h1 align="center">Programmable Machine Controller (PMC)</h1>
-    <h2  align="center"> A Modular Platform for Building the Physical Operator Workspace </h2>
-    <div class="text-content">
-
-         <p align="center">
-            <img src="PMC.jpg" alt="Programmable Machine Controller Platform" width="100%">
-        </p>
-        <p>The Programmable Machine Controller (PMC) is a hardware-software ecosystem powered by 3o|||sheet. It integrates the industrial controller, I/O modules, and operator controls (buttons, joysticks, encoders, and touchscreens) into a single execution layer, removing the need for separate PLC hardware and HMI panels that communicate over slow communication protocols.</p>
-
-        <h3>Unified Core Architecture & Single Interface</h3>
-        <p>Traditional PLC systems provide a controller and I/O expansion, while buttons, encoders, joysticks, faders
-and other operator controls are normally selected and integrated separately. The result is often a control
-system assembled from components with different mechanical designs, interfaces and manufacturers.
-PMC changes this model. The processor module becomes the core of a configurable physical control system.
-A user can snap on the modules required for the machine: conventional I/O modules when expansion is
-needed, or operator modules when a physical control interface is required.</p>
-        <ul>
-            <li><strong>All-in-One CPU Module</strong> — A single controller handles standard industrial I/O processing, physical operator inputs, and touchscreen coordinates simultaneously.</li>
-            <li><strong>Zero-Protocol Mapping</strong> — Hardware inputs, analog joysticks, digital encoders, and virtual touchscreen buttons map directly to internal variables, reducing communication latency and configuration overhead.</li>
-        </ul>
-
-                <div class="feature">
-            <video controls autoplay muted loop>
-                <source src="https://zoshytlogic.github.io/UniversalProcessor.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-
-        <p>The key idea is simple: operator controls are not external accessories connected to the PLC; they become native physical resources of the PLC.</p>
-
-        <h3>The PLC as a Physical Workspace Builder</h3>
-        <p>PMC allows the same platform to become either a conventional PLC or a complete physical operator console.
-The developer chooses the required modules and assembles the controller around the actual human
-interface of the machine.<br>
-Examples include:</p>
-        <ol>
-            <li>• CPU + standard I/O modules for a conventional automation controller.</li>
-            <li>• CPU + buttons + encoders + joysticks + display for a machine operator panel.</li>
-             <li>• CPU + specialized control modules for a custom professional console.</li>
-        </ol>
-
-        <h3>One Platform, Many Workspaces</h3>
-        <p>The same PMC design language can support very different human-machine environments. The point is not
-that all applications look identical; it is that all of them can be built from the same coherent modular
-platform. <br> Representative application concepts:</p>
-        <ul>
-            <li>• An operator workspace for a complex industrial or energy installation, where ergonomics, clarity and
-reliability are critical.</li>
-            <li>• A DJ performance console on stage, combining encoders, buttons, faders, displays and performance
-controls.</li>
-            <li>• A lighting designer's console for stage, theatre or events, optimized around fast visual and tactile control.</li>
-            <li>• A combine harvester driver's control console, integrating robust buttons, joysticks, displays and machine
-functions.</li>
-             <li>• Specialized machine and production-line control panels.</li>
-        </ul>
-
-        <h3>Unified Mechanical and Industrial Design</h3>
-        <p>The mechanical interface is part of the PMC architecture. Processor, I/O and operator modules are designed
-as members of the same product family, allowing the physical interface to look and feel like a deliberately
-designed console rather than a collection of unrelated PLC components and third-party controls.
-This makes industrial design and ergonomics functional parts of the platform. A PMC system can be shaped
-around the human task—from a compact machine panel to a highly specialized professional operator
-console—while retaining a common mechanical and logical foundation.</p>
-        <ul>
-            <li><strong>High-Priority Elements (Zero-Protocol)</strong> — Reserved exclusively for physical operator interface controls (buttons, joysticks, encoders) that require immediate system response. Direct hardware routing over the I/O lines minimizes delays caused by packet packaging, network arbitration, or software stack processing.</li>
-            <li><strong>Standard-Priority Expansion (CAN Protocol)</strong> — Once all direct I/O lines are fully allocated, any further system expansion shifts to the CAN interface.</li>
-        </ul>
-
-        <h3>Unified Core Architecture</h3>
-        <p>
-            A single computing core handles machine logic, standard industrial I/O and physical operator inputs.
-Buttons, joysticks, encoders and other controls can therefore be mapped into the same controller resource
-model instead of being treated as unrelated external devices.
-        </p>
-        <h3>Dynamic Hardware Resource Mapping</h3>
-        <p>
-            When an operator module is connected, it identifies its digital profile to the CPU. The CPU evaluates the
-current resource map and assigns available physical lines to the module. The module then routes its
-physical controls onto those assigned lines.
-This creates a configurable hardware layer in which the physical topology can be changed without requiring
-the application to be rewritten for every individual panel arrangement.
-        </p>
-        <h3>Hybrid Architecture: CAN Control Plane + Direct I/O Data Plane</h3>
-        <p>Control Plane — CAN</p>
-        <ul>
-            <li>Module discovery and registration</li>
-            <li>Profile interrogation and resource assignment.</li>
-            <li>Diagnostics and configuration</li>
-             <li>Low-priority and standard expansion data</li>
-        </ul>
-
-        <p>Data Plane — Direct I/O</p>
-        <ul>
-            <li>High-priority physical operator controls</li>
-            <li>Buttons, joysticks, encoders and similar signals</li>
-            <li>Direct hardware path to controller I/O resources</li>
-             <li>No runtime packet transport required for the direct path</li>
-        </ul>
-
-           <h3>Zero-Protocol Data Path</h3>
-    <p>
-        In PMC, “Zero-Protocol” refers specifically to the critical runtime data path. CAN is still used for discovery,
-registration, configuration and resource allocation. Once the physical resources have been assigned,
-selected high-priority controls can use a direct hardware I/O path instead of passing through a conventional
-
-runtime communication protocol stack.
-The architectural objective is therefore not “no protocol anywhere,” but a protocol-free real-time I/O path for
-the signals where deterministic response is most valuable.
-    </p>
-
-<h3>Scaling and Resource Allocation</h3>
-
-<p>The direct I/O layer provides 36–72 physical lines for high-priority elements. Once the direct resources are
-fully allocated, additional expansion can use the CAN interface for standard I/O, sensors, diagnostics,
-configuration and other lower-priority traffic.</p>
-
-        <h3>Product Advantages</h3>
-
-        <p>
-            • One platform for PLC, I/O and the physical operator workspace.<br>
-• A constructor-like approach to building machine controls.<br>
-• A unified mechanical and visual design across modules.<br>
-• Specialized ergonomic consoles without relying on a collection of unrelated third-party controls.<br>
-• Dynamic assignment of physical hardware resources.<br>
-• A direct hardware path for high-priority operator inputs.<br>
-• CAN-based discovery, configuration, diagnostics and scalable expansion.<br>
-• The same platform can remain a conventional PLC when no physical operator modules are required.<br>
-        </p>
-
-<h3>The Product Vision</h3>
-        <h4>PMC turns the industrial controller from a fixed electronic box into a platform
-
-from which a specific human workspace can be built.
-
-Build the machine. Design the workspace. The processor is the core; the physical
-interface is assembled around it according to the machine, the operator and the
-
-task.</h4>
-
-        <p>From an industrial operator workspace to a DJ console, from a lighting designer's desk to a combine driver's
-control panel, the underlying principle remains the same: one modular platform, one design language,
-configurable hardware and a unified control architecture.</p>
-
-
-
-        
-    </div>
-</div>
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-<footer>
-    zoshytlogic@gmail.com
-    <br>
-    dme.verify@gmail.com
-</footer>
+</div> <!-- end .container -->
 
 </body>
 </html>
